@@ -4,10 +4,24 @@ title: About
 permalink: /about/
 ---
 
-Sleek is a modern Jekyll theme focused on speed performance & SEO best practices. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/) or simply read the guide on how to [get started](/getting-started)
+I’m an aspiring data scientist who isn’t shy about tackling critical issues. I have always been fascinated by numbers and patterns and use this ability to extract insight and knowledge from hidden details. By using my intuition and skill, I look to see what the data can tell us, and strive to get it to collaborate with the right people to make a positive impact in the world. The truth is in the details, let’s work together.
 
-You can find the source code for the Jekyll new theme at:
-[sleek](https://github.com/janczizikow/sleek)
+### Area of Focus
 
-You can find the source code for Jekyll at
-[jekyll](https://github.com/jekyll/jekyll)
+_Data Science_
+
+- NLP
+- Machine Learning
+- Data Visualization
+- Scikit-Learn
+
+_Topics_
+
+- Energy
+- Politics
+- Public Service
+- Music
+
+### Contact me
+
+[email@me](james.babyak@gmail.com)
