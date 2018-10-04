@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My dive into the Data Science world with General Assembly!
+title: Dive into Data Science with General Assembly!
 featured-img: sleek
 mathjax: true
 ---
