@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-title: James Babyak | Data Science
+title: **James Babyak** | Data Science
 author: GitHub User | babyakja
 description: > # Meta description of Homepage
   I’m an aspiring data scientist who isn’t shy about tackling critical issues. 
@@ -24,9 +24,9 @@ navigation: # Navigation links
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Data Science for Positive Impact
+  Data Scientist for Positive Impact
 
-hero_img: /assets/img/posts/shane-rounce-205187.jpg  # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: /posts/sleek_lg.jpg  # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
 email: james.babyak@gamil.com # email for form submission
 
