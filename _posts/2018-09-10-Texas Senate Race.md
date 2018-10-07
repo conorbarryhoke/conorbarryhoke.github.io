@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NLP on the 2018 Texas Senate Race"
-featured-img: shane-rounce-205187
+featured-img: beto
 categories: [Project]
 ---
 
