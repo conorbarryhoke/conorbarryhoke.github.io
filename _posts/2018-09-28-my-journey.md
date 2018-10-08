@@ -3,6 +3,7 @@ layout: post
 title: Dive into Data Science with General Assembly!
 featured-img: sleek
 mathjax: true
+categories: [Blog]
 ---
 
 ## Journey
