@@ -17,7 +17,17 @@ _Applied Tools:_
 - APIs
 - Natural Language Processing (NLP)
 
-**Conclusion**
+### Data
+
+Data was collected usping the Reddit API to access posts from the subreddits for each campaign as well as the Texas subreddit.
+
+### Models
+
+After using TF-IDF to vectorize the text data, I then applied multiple model types for classification, ultimately using Logistic Regression.
+
+The model was able to correctly conduct binary classification with an accuracy score of **0.94**.
+.
+### Conclusion
 
 Binary predictor can be effective in a first stage classification but can miss subtle things like sarcasm and word proximity. In the case of the subreddit posts from r/texas, posts with the highest probability as pro-Cruz were some of the strongest insults.
 
