@@ -2,7 +2,7 @@
 layout: post
 title: "NLP on the 2018 Texas Senate Race"
 featured-img: cruz-beto
-categories: [Project]
+categories: [Project, NLP]
 ---
 
 Campaigns have radically changed. As demonstrated in 2016, viral content and online message can have a powerful influence over the state of the race. Party platforms have less influence now than what is being discussed across the internet. The challenge for modern campaigns is to be able to effectively stay on top and get the message they want to reach voters.

@@ -3,7 +3,7 @@ layout: post
 title: What is Kanye Thinking?
 featured-img: kanye-ye
 mathjax: true
-categories: [Project]
+categories: [Project, NLP]
 ---
 
 For my capstone project to close out my time at GA, I decided to take on one of the most pressing questions being asked right now, What's Up With Kanye?
