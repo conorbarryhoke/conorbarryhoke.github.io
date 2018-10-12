@@ -29,7 +29,7 @@ The model was able to correctly conduct binary classification with an accuracy s
 
 During review of the coefficients, it was clear that the names of each candidate was the overwhelming influence on the model
 
-<img src="http://www.google.com.au/images/nav_logo7.png">
+<img src="http://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/Beto%20coefficients.png">
 ![Cruz Coefficients](http://www.google.com.au/images/nav_logo7.png)
 
 ### Application
