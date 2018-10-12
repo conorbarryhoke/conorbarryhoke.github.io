@@ -23,9 +23,15 @@ Data was collected usping the Reddit API to access posts from the subreddits for
 
 ### Models
 
-After using TF-IDF to vectorize the text data, I then applied multiple model types for classification, ultimately using Logistic Regression.
+After using TF-IDF to vectorize the text data, I then applied multiple model types for classification in a pipeline and optimized with GridSearch. Ultimately, I ended up using Logistic Regression.
 
 The model was able to correctly conduct binary classification with an accuracy score of **0.94**.
+
+During review of the coefficients, it was clear that the names of each candidate was the overwhelming influence on the model
+
+![Beto Coefficients](/https://babyakja.github.io/assets/img/posts/Beto coefficients.png)
+
+
 .
 ### Conclusion
 
