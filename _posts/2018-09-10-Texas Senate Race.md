@@ -37,7 +37,7 @@ _Predictions on Texas subreddit_
 
 I wanted to understand the state of a third subreddit using what was trained to the model and if I could get the pulse of the Texas reddit 
 
-![Texas Predictions](https://public.tableau.com/views/Book3-Txsubredditprediction/Sheet1?:embed=y&:display_count=yes&publish=yes)
+![Texas Predictions](https://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/TX%20subreddit.png)
 
 ### Conclusion
 
