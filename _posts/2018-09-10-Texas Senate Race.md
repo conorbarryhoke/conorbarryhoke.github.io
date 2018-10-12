@@ -29,8 +29,8 @@ The model was able to correctly conduct binary classification with an accuracy s
 
 During review of the coefficients, it was clear that the names of each candidate was the overwhelming influence on the model
 
-<img src="https://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/Beto-coeff.png">
-![Cruz Coefficients](https://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/Crus-coeff.png)
+<img src="http://www.google.com.au/images/nav_logo7.png">
+![Cruz Coefficients](http://www.google.com.au/images/nav_logo7.png)
 
 ### Application
 _Predictions on Texas subreddit_
