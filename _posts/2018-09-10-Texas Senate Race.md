@@ -30,9 +30,15 @@ The model was able to correctly conduct binary classification with an accuracy s
 During review of the coefficients, it was clear that the names of each candidate was the overwhelming influence on the model
 
 ![Beto Coefficients](https://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/Beto%20coefficients.png)
+![Cruz Coefficients](https://github.com/babyakja/babyakja.github.io/blob/master/assets/img/posts/Cruz%20Coefficients.png)
 
+### Application
+_Predictions on Texas subreddit_
 
-.
+I wanted to understand the state of a third subreddit using what was trained to the model and if I could get the pulse of the Texas reddit 
+
+![](https://public.tableau.com/views/Book3-Txsubredditprediction/Sheet1?:embed=y&:display_count=yes&publish=yes)
+
 ### Conclusion
 
 Binary predictor can be effective in a first stage classification but can miss subtle things like sarcasm and word proximity. In the case of the subreddit posts from r/texas, posts with the highest probability as pro-Cruz were some of the strongest insults.
