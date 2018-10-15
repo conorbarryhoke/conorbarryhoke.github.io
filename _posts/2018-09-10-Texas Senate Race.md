@@ -91,8 +91,7 @@ _Predictions on Texas subreddit_
 I wanted to understand the state of a third subreddit using what was trained to the model and if I could get the pulse of the Texas reddit. I used the same function I built earlier and isolated any post referencing a candidate or had a 'politics' flag.
 
 ![TX](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/TX-subreddit.png)
-For the interactive Tableau chart, [vist this page.]
-(https://public.tableau.com/profile/james6137#!/vizhome/Book3-Txsubredditprediction/TXsubreddit?publish=yes)
+For the interactive Tableau chart, [vist this page.](https://public.tableau.com/profile/james6137#!/vizhome/Book3-Txsubredditprediction/TXsubreddit?publish=yes)
 
 ### Conclusion
 
@@ -101,5 +100,7 @@ Binary predictor can be effective in a first stage classification but can miss s
 _Takeaways_
 
 > __Be careful for the Accuracy Paradox__
+
 > __Knowing your data source__
-__
+
+To check out more about the project, visit hte Github repo [here.](https://github.com/babyakja/subreddit_nlp_tx_senate_race)
