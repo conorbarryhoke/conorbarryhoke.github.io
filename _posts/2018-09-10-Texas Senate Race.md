@@ -72,6 +72,7 @@ Each of the total posts per campaign were the same in the following chart, but s
 After using TF-IDF to vectorize the text data, I applied multiple classifcation model types into a pipeline and optimized each with GridSearch on my training data to predict which subreddit the post came from. Exploring a variety of models initially helped give direction on which was able to perform relatively effectively and within the scope of the project.
 
 _Options in Pipeline_
+
 |__Models__|__Vectorizer__|
 |---|---|
 |- Logistic |- Count Vectorizer|
@@ -103,13 +104,15 @@ To further explore how each candidate name effected the accuracy of the overall 
 The main reason for this to occur based on these findings was that posts from the Beto subreddit included more references to Ted Cruz and once removed, was able to seperate Beto posts just as effectively. 
 
 1. Remove Candidates Names
-  - 0.729
+> 0.729
 2. Remove 'Beto' and 'Rourke'
-  - 0.835
+> 0.835
 3. Remove 'Ted' and 'Cruz'
-  - 0.910
+> 0.910
 
 #### Addressing the Accuracy Paradox
+
+What this ultimately comes down to is the model demonstrates the need to look at our results from a different perspective based on our data and how the accuracy paradox can come into play. The accuracy paradox states that a model wiht a given level of accuracy may have greater predictive power than models with higher accuracy. So while we are performing at a high accuracy, the best model may not be the one with highest accuracy since what allows us to generate a high score may not be what we really need in the end to find our true positive and negative predictions.
 
 __Collect more data:__ _could help balance the dataset_
 
@@ -120,7 +123,8 @@ __Oversample the data:__ _Randomly sample the minority class to create more 'fak
 __Penalized model:__ _Bias the model towards the minority class._  
 
 ### Application
-_Predictions on Texas subreddit_
+
+_Predictions on Texas Subreddit_
 
 I wanted to understand the state of a third subreddit using what was trained to the model and if I could get the pulse of the Texas reddit. I used the same function I built earlier and isolated any post referencing a candidate or had a 'politics' flag.
 
@@ -133,7 +137,7 @@ For the interactive Tableau chart, [vist this page.](https://public.tableau.com/
 
 ### Conclusion
 
-Binary predictor can be effective in a first stage classification but can miss subtle things like sarcasm and word proximity. In the case of the subreddit posts from r/texas, posts with the highest probability as pro-Cruz were some of the strongest insults against him.
+Binary predictor can be effective in a first stage classification but can miss subtle things like sarcasm and word proximity. In the case of the subreddit posts from r/texas, posts with the highest probability as pro-Cruz were some of the strongest insults against him. Noticing and taking into account what your data actually contains is imperative to your ability to interpret the results. 
 
 _Takeaways_
 
@@ -141,6 +145,6 @@ _Takeaways_
 
 > __Know your data source__
 
-> __Balancing model complexity to your needs__
+> __Balance model complexity to your needs__
 
 To check out more about the project, visit the Github repo [here.](https://github.com/babyakja/subreddit_nlp_tx_senate_race)

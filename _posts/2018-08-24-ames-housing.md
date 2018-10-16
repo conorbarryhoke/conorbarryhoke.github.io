@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Predicing Home prices in Ames, Iowa
+title: Predicting Home Prices in Ames, Iowa
 featured-img : ames-iowa
 categories: [Project, EDA]
 ---
