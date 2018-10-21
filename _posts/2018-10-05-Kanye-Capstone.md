@@ -6,5 +6,13 @@ mathjax: true
 categories: [Project, NLP]
 ---
 
-For my capstone project to close out my time at GA, I decided to take on one of the most pressing questions being asked right now, What's Up With Kanye?
-As a public figure with his mental state under constant scrutinity, what can we learn about how he has changed over time by what is reflected in the songs he sings?
+
+Kanye West has been one of the most controversal public figures over the last decade and recently has been scrutinized about his views on politics and Trump. This has led to many viewing his actions as something easy to scoff at or dismiss as being crazy.
+
+However, on his latest album __ye__, he declares on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_. The reality is bipolar disorder affects 6.86 million U.S. adults annually and is a problem needing to be addressed. Commonly underdiagnoised or those that suffer with this condition avoiding treatment due to stigma surrounding being bipolar,
+
+
+
+what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?
+
+
