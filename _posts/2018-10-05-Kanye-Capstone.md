@@ -60,7 +60,9 @@ __B)__ Orion not having the song in their API.
 ### __Discography Summary__
 
 > __14__ Albums
+
 > __128__ Unique Songs
+
 > __62,648__ Total Words Used
 
 | _Albums_|_Singles_|
@@ -110,19 +112,28 @@ Unfortunately, Kanye decided to delete his Twitter and Instagram account during 
 
 ## __Models__
 
+After the data was processed, it was ready to be used across different types of model to try and classify observations into coherent groups. With unsupervised learning, it is extremely difficult to work on grouping data into clusters that actually make sense. This involves a lot of fine tuning and exploration to try and pinpoint what is the best at summarizing into meaningful sets. To do this, I attempted two different models to group songs into topics:
+
 ### _Topic Modeling_
 1. __LDA (Latent Dirichlet allocation)__ - Statistics Based
 2. __NMF (Non-negative Matrix Factorization)__ - Linear Algebra
 
+LDA provided the most interpretable results with the count vectorized lyric data for the word groupings that were being returned.
+But how many topics to go with? Similar to selecting the number of clusters to use in k-Means, finding the right balance here requires using several different possible evaluation methods. I chose to use a metric called __Coherence Score__ to help in this process. The coherence score can be calculated across different topic numbers and compare to see which provide the right fidelity to
+
 ![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
+
+I choose to use a five topic split since it provided a balance in scoring well for coherence and I could interpret the top words into meaningful groups. Listed below were the topics I settled on.
 
 ### _Topics_
 
-1. Public Persona
-1. Speak Ye Truth
-1. Broke /Women/ Money
-1. Life
-1. Make Right/ Legacy
+1. __Public Persona__ - Songs about being in the spotlight and fame
+1. __Speak Ye Truth__ - Kanye singing about what he believes and the truth he wants to speak
+1. __Broke /Women/ Money__ - Everything relating to coming from being to broke to being rich and all his different expereiences with the women in his life
+1. __Life__ - General topic about the issues we face in life and handling the ups and downs
+1. __Make Right/ Legacy__ - Ye's reflecting on his legacy and the trying to make things right for the mistakes he has realized he has made
+
+Each song can be labeled as most likely belong to a particular topic. Most notable, I believe was more songs being in the topic group __Life__ among his more recent work than in his breakout albums where __Money__ and __Truth__ appeared to dominate.
 
 ![Kanye Discography](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Kanye-Discography2.png)            
 
