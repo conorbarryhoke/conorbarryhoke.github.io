@@ -209,9 +209,9 @@ Topic grouping was just the beginning of the analysis and I wanted to bring in t
 
 ## __Sequential Topic Model__
 
-Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting something called _chain variance_.
+Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting a parameter called _chain variance_.
 
-![Topic 2006](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime%2006.png)
+![Topic 2006](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime2006.png)
 
 ![Topic 2016](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime2016.png)
 
@@ -223,7 +223,7 @@ What we can discover can help the millions of people not only living with bipola
 
 ### _Applied to mental health treatment_
 - Beyond Doctor Visits
-  - Provide an extension to treatment outside of in person visits
+  - Provide an extension to treatment outside of in-person visits
 - Real Time Prognosis
   - Independent evaluation that is less intrusive and provide benefit when actually needed
 
