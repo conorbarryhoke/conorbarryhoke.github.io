@@ -173,6 +173,16 @@ Using Word2Vec
    _Chain Variance_
 
 
+# _Conclusion_
+
+### Machine Learning can provide powerful tools in the detection of changes
+
+What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, and coworkers, the ones they love manage an often misunderstood disorder.
+
+### _Applied to mental health treatment_
+- Beyond Doctor Visits
+- Real Time Prognosis
+
 #   _Takeaways_
 
 Data:
