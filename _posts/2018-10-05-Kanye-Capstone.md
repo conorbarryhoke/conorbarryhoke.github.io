@@ -7,11 +7,11 @@ categories: [Project, NLP]
 ---
 
 
-Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led to many viewing his actions as something to joke about or just plainly being dismissed as crazy. However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_.
+Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led many to view his actions as something to joke about or just plainly being dismissed as crazy. However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_.
 
 ![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.jpg)
 
-The reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder,
+While bad behavior that hurts people is not excusable, the reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder, getting the correct treatment to patients is still a hurdle preventing many from getting the help they need.
 
 _Bipolar Disorder_
 
@@ -19,7 +19,7 @@ So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being character
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
-For my capstone project at General Assembly, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
+Knowing first hand the impact of living with bipolar disorder can have on your personal, financial, and everyday life, the potential of filling in this gap drew me to work on this subject. So to close out my time at General Assembly, I wanted my capstone project to center on exploring if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
 
 __Problem Statement__
 
@@ -29,7 +29,9 @@ __Problem Statement__
 
 _Obtain the Data_
 
-In order to build out a
+In order to build out the data to look for changes over time, I collected as much data as I could that would give insight into what Kanye was thinking. This centered on the two areas where he shares his most revealing personal thoughts: his lyrics and on Twitter.
+
+First, I collected his lyric data.
 
 __1. Find source for lyrics and create function to access API for each song__
 
@@ -55,9 +57,9 @@ Once a full list of of Kanye's song was made, I could pass the list into a funct
 __A)__ slight variation in the song title between Orion and Spotify or
 __B)__ Orion not having the song in their API.
 
-### __Lyric Data__
+### __Discography Summary__
 
-> __14__ Albums __ __ __128__ Unique Songs __   __ __62,648__ Total Words Used
+> __14__ Albums __128__ Unique Songs __62,648__ Total Words Used
 
 | _Albums_|_Singles_|
 |---|---|
