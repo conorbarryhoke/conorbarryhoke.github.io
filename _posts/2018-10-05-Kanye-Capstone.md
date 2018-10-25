@@ -59,7 +59,9 @@ __B)__ Orion not having the song in their API.
 
 ### __Discography Summary__
 
-> __14__ Albums __128__ Unique Songs __62,648__ Total Words Used
+> __14__ Albums
+> __128__ Unique Songs
+> __62,648__ Total Words Used
 
 | _Albums_|_Singles_|
 |---|---|
@@ -75,12 +77,28 @@ __B)__ Orion not having the song in their API.
 
 ### __Text Cleaning__
 
-In order to feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable.
+In order to feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable. To do this, several steps to properly clean the data were taken:
 
 __1. Prep text into corpus__
   - __Regex:__ Some lyric data also contain reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
   - __Stop Words:__ Stop word were removed covering basic words and I experimented using the starting list from `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers (_'uuuuhhh, 'ooooohhs'_).
   - __Lemmatization:__ Finally the words were passed through a lemmatization function to reduce plural words to their singular word.
+
+  ```python
+  def clean_text(song):
+      clean_text_step = [song.splitlines()]
+
+      for song in clean_text_step:
+          clean_song = []
+          for line in song:
+              if  line != '':
+                  line = re.sub(r'[^\w\s]','',line) # Removes Punctuation
+                  line_2 = [lemmatizer.lemmatize(word) for word in line.lower().split() if word not in stop] # Stem words (remove plural)
+                  clean_song.append(line_2)
+              else:
+                  pass
+      return clean_song
+  ```
 
 __2. Vectorize words for use in model__
 
@@ -88,16 +106,13 @@ To separate words in preparation for topic modeling or classification, the clean
   - __Count Vectorizer:__ Total Count Frequency
   - __TFIDF Vectorizer:__ Term Frequency for all Observations
 
+Unfortunately, Kanye decided to delete his Twitter and Instagram account during the middle of my data collection and I could not include in my project based on the timeline I was working with.
 
-# __Models__
+## __Models__
 
 ### _Topic Modeling_
-1. LDA (Latent Dirichlet allocation)
-Statistics Based
-_Sequential_
-
-2. NMF (Non-negative Matrix Factorization)
-Linear Algebra
+1. __LDA (Latent Dirichlet allocation)__ - Statistics Based
+2. __NMF (Non-negative Matrix Factorization)__ - Linear Algebra
 
 ![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
 
