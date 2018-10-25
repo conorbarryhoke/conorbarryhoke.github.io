@@ -7,11 +7,14 @@ categories: [Project, NLP]
 ---
 
 
-Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led to many viewing his actions as something to joke about or being dismiss as crazy.
+Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led to many viewing his actions as something to joke about or just plainly being dismissed as crazy. However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_.
 
-However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_. The reality is bipolar disorder affects 6.86 million U.S. adults annually and is a critical mental health crisis needing to be addressed. Commonly misdiagnosed or treatment being avoided due to the stigma surrounding bipolar disorder, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
+![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.jpg)
 
-![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.png)
+The reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder,
+
+For my capstone project at General Assembly, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
+
 
 _Problem Statement_
 
@@ -19,14 +22,15 @@ __Using Machine Learning, what can we learn about how Kanye's behavior and menta
 
 ## _Bipolar Disorder_
 
-So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks.
-These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
+So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)            
 
 # Data
 
 _Obtain the Data_
+
+In order to build out a 
 
 __1. Find source for lyrics and create function to access API for each song__
   - My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using Orion Apieseed lyric API. This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
@@ -181,7 +185,7 @@ What we can discover can help the millions of people not only living with bipola
 
 ### _Applied to mental health treatment_
 - Beyond Doctor Visits
-- Real Time Prognosis
+  - Real Time Prognosis
 
 #   _Takeaways_
 
