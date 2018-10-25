@@ -112,33 +112,37 @@ Unfortunately, Kanye decided to delete his Twitter and Instagram account during 
 
 ## __Models__
 
-After the data was processed, it was ready to be used across different types of model to try and classify observations into coherent groups. With unsupervised learning, it is extremely difficult to work on grouping data into clusters that actually make sense. This involves a lot of fine tuning and exploration to try and pinpoint what is the best at summarizing into meaningful sets. To do this, I attempted two different models to group songs into topics:
+After the data was processed, it was ready to be used across different types of model to try and classify observations into coherent groups. With unsupervised learning, it is extremely difficult to work on grouping data into clusters that actually make sense. This involves a lot of fine tuning and exploration to try and pinpoint what is the best at summarizing into meaningful sets.
+
+To do this, I attempted two different models to group songs into topics:
 
 ### _Topic Modeling_
 1. __LDA (Latent Dirichlet allocation)__ - Statistics Based
 2. __NMF (Non-negative Matrix Factorization)__ - Linear Algebra
 
 LDA provided the most interpretable results with the count vectorized lyric data for the word groupings that were being returned.
-But how many topics to go with? Similar to selecting the number of clusters to use in k-Means, finding the right balance here requires using several different possible evaluation methods. I chose to use a metric called __Coherence Score__ to help in this process. The coherence score can be calculated across different topic numbers and compare to see which provide the right fidelity to
+
+__But how many topics to go with?__ Similar to selecting the number of clusters to use in k-Means, finding the right balance here requires using several different possible evaluation methods. I chose to use a metric called __Coherence Score__ to help in this process. The coherence score can be calculated across different topic numbers and compare to see which provide the right fidelity to the level you are looking for. My intention was to allocate songs into as many topics as possible that were descriptive but so much that isolated one song per topic. On the flip side, selecting too few topics lumps almost all songs into general groups where uniqueness can not be easily defined.
 
 ![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
 
-I choose to use a five topic split since it provided a balance in scoring well for coherence and I could interpret the top words into meaningful groups. Listed below were the topics I settled on.
+I choose to use a five topic split since it provided a balance in scoring well for coherence and I could interpret the top words into meaningful groups. Listed below were the topics I settled on:
 
 ### _Topics_
 
 1. __Public Persona__ - Songs about being in the spotlight and fame
 1. __Speak Ye Truth__ - Kanye singing about what he believes and the truth he wants to speak
-1. __Broke /Women/ Money__ - Everything relating to coming from being to broke to being rich and all his different expereiences with the women in his life
-1. __Life__ - General topic about the issues we face in life and handling the ups and downs
+1. __Broke /Women/ Money__ - Songs about not having and having money and all his different experiences with women in his life
+1. __Life__ - General topic about the issues he has faced in life and handling the ups and downs
 1. __Make Right/ Legacy__ - Ye's reflecting on his legacy and the trying to make things right for the mistakes he has realized he has made
 
-Each song can be labeled as most likely belong to a particular topic. Most notable, I believe was more songs being in the topic group __Life__ among his more recent work than in his breakout albums where __Money__ and __Truth__ appeared to dominate.
+Each song can be labeled as most likely belong to a particular topic. Most notable, I believe, was more songs being in the topic group __Life__ among his more recent work than in his breakout albums where __Money__ and __Legacy__ appeared to dominate.
 
 ![Kanye Discography](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Kanye-Discography2.png)            
 
 [Interactive Tableau Chart](https://public.tableau.com/profile/james6137#!/vizhome/KanyeWestGraphs/Discography2?publish=yes)
 
+Each song is given a probability of belonging to a particular topic. As an additional means of evaluating topic coherence, I reviewed how well the most probabilist song from each topic belonged there. Overall, this returned solid results.
 
 ### Highest Probability Song | _Each Topic_
 
@@ -171,7 +175,7 @@ Make Right/ Legacy
 
 ### __Word Similarity__
 
-Topic grouping was just the beginning of the analysis and wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and applies word association. Using a model called Word2Vec
+Topic grouping was just the beginning of the analysis and I wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and applies word association. Using a model called Word2Vec
 
 ### _Most Similar to:_ __Love__
 
@@ -203,13 +207,13 @@ Topic grouping was just the beginning of the analysis and wanted to bring in the
  ('catch', 0.44258543848991394)]
  ```
 
-##__Sequential Topic Model__
+## __Sequential Topic Model__
 
+Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting something called _chain variance_.
 
- 1. Group Songs by years
- Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for 
- I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting something called _chain variance_.
+![Topic 2006](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime%2006.png)
 
+![Topic 2016](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime2016.png)
 
 ## _Conclusion_
 
@@ -219,20 +223,20 @@ What we can discover can help the millions of people not only living with bipola
 
 ### _Applied to mental health treatment_
 - Beyond Doctor Visits
-  - Real Time Prognosis
+  - Provide an extension to treatment outside of in person visits
+- Real Time Prognosis
+  - Independent evaluation that is less intrusive and provide benefit when actually needed
 
-##   _Takeaways_
+## _Takeaways_
 
 Data:
 
-> _Song text data can be inconsistent and difficult to align_
+> __Song text data can be inconsistent and difficult to align__
 
 > __Balancing manual text cleaning with scalable operations is extremely helpful__
 
 Model:
 
-> __Topic Modeling can assist in finding overarching groups, focus on need (static vs dynamic)__
+> __Topic Modeling can assist in finding overarching groups, fleible based on need (static vs dynamic)__
 
 > __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
-
-> __t-SNE can be a great visual tool but difficult to fine tune for classification purposes__
