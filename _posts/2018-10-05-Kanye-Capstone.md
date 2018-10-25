@@ -13,32 +13,33 @@ Kanye West is one of the most controversial public figures over the last decade 
 
 The reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder,
 
-For my capstone project at General Assembly, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
-
-
-_Problem Statement_
-
-__Using Machine Learning, what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?__
-
-## _Bipolar Disorder_
+_Bipolar Disorder_
 
 So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
 
-![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)            
+![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
-# Data
+For my capstone project at General Assembly, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
+
+__Problem Statement__
+
+> __Using Machine Learning, what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?__
+
+## Data
 
 _Obtain the Data_
 
-In order to build out a 
+In order to build out a
 
 __1. Find source for lyrics and create function to access API for each song__
-  - My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using Orion Apieseed lyric API. This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
+
+My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using Orion Apieseed lyric API. This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
 
 `url = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + orion_keys['api_key']`
 
 __2. Create song list of Kanye's body of work__
-  - To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
+
+To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
 
 ```
 from spotipy import Spotify
@@ -49,11 +50,14 @@ Kanye_spotify_id = '5K4W6rqBFWDnAN6FQUkS6x'
 album_dict = sp.artist_albums(Kanye_spotify_id,country='US')
 ```
 __3. Collect lyrics__
-  - Once a full list of of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in song title with what was available in the Orion API. This was either due to __A)__ slight variation in the song title between Orion and Spotify or __B)__ Orion not having the song in their API.
 
-## __Lyric Data__
+Once a full list of of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in song title with what was available in the Orion API. This was either due to:
+__A)__ slight variation in the song title between Orion and Spotify or
+__B)__ Orion not having the song in their API.
 
-> __14__ Albums __|__ __128__ Unique Songs __|__ __62,648__ Total Words Used
+### __Lyric Data__
+
+> __14__ Albums __ __ __128__ Unique Songs __   __ __62,648__ Total Words Used
 
 | _Albums_|_Singles_|
 |---|---|
@@ -67,32 +71,35 @@ __3. Collect lyrics__
 |  'Late Registration'||
 |  'The College Dropout'||
 
-## __Text Cleaning__
+### __Text Cleaning__
 
 In order to feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable.
 
 __1. Prep text into corpus__
   - __Regex:__ Some lyric data also contain reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
-  - __Stop Words:__ Stop word were removed covering basic words and I experimented using the starting list from `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers ('uuuuhhh, 'ooooohhs').
+  - __Stop Words:__ Stop word were removed covering basic words and I experimented using the starting list from `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers (_'uuuuhhh, 'ooooohhs'_).
   - __Lemmatization:__ Finally the words were passed through a lemmatization function to reduce plural words to their singular word.
 
 __2. Vectorize words for use in model__
-  - In order to separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TFIDIF vectorizer. Both were used to pass words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
+
+To separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TFIDIF vectorizer. Both were used to pass words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
   - __Count Vectorizer:__ Total Count Frequency
+  - __TFIDF Vectorizer:__ Term Frequency for all Observations
 
 
 # __Models__
 
-###   _Topic Modeling_
+### _Topic Modeling_
 1. LDA (Latent Dirichlet allocation)
 Statistics Based
 _Sequential_
+
 2. NMF (Non-negative Matrix Factorization)
 Linear Algebra
 
 ![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
 
-### _Topics:_
+### _Topics_
 
 1. Public Persona
 1. Speak Ye Truth
@@ -105,7 +112,7 @@ Linear Algebra
 [Interactive Tableau Chart](https://public.tableau.com/profile/james6137#!/vizhome/KanyeWestGraphs/Discography2?publish=yes)
 
 
-## Highest Probability Song | _Each Topic_
+### Highest Probability Song | _Each Topic_
 
 ```
 0.9954962574881103
@@ -134,7 +141,7 @@ Life
 Make Right/ Legacy
 ```
 
-## __Word Similarity__
+### __Word Similarity__
 
 Using Word2Vec
 
@@ -177,7 +184,7 @@ Using Word2Vec
    _Chain Variance_
 
 
-# _Conclusion_
+## _Conclusion_
 
 ### Machine Learning can provide powerful tools in the detection of changes
 
@@ -187,7 +194,7 @@ What we can discover can help the millions of people not only living with bipola
 - Beyond Doctor Visits
   - Real Time Prognosis
 
-#   _Takeaways_
+##   _Takeaways_
 
 Data:
 
