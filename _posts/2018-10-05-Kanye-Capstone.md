@@ -7,17 +7,19 @@ categories: [Project, NLP]
 ---
 
 
-Kanye West has been one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led to many viewing his actions as something to joke about or being dismiss as crazy.
+Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led to many viewing his actions as something to joke about or being dismiss as crazy.
 
 However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_. The reality is bipolar disorder affects 6.86 million U.S. adults annually and is a critical mental health crisis needing to be addressed. Commonly misdiagnosed or treatment being avoided due to the stigma surrounding bipolar disorder, I wanted to explore if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
 
+![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.png)
+
 _Problem Statement_
 
-Using Machine Learning, what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?
+__Using Machine Learning, what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?__
 
 ## _Bipolar Disorder_
 
-The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks.
+So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks.
 These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)            
@@ -26,11 +28,28 @@ These shifts in mood and energy levels are more severe than the normal ups and d
 
 _Obtain the Data_
 
+__1. Find source for lyrics and create function to access API for each song__
+  - My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using Orion Apieseed lyric API. This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
+
+`url = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + orion_keys['api_key']`
+
+__2. Create song list of Kanye's body of work__
+  - To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
+
+```
+from spotipy import Spotify
+from spotipy.oauth2 import SpotifyClientCredentials
+
+# Kanye's Spoitfy id
+Kanye_spotify_id = '5K4W6rqBFWDnAN6FQUkS6x'
+album_dict = sp.artist_albums(Kanye_spotify_id,country='US')
+```
+__3. Collect lyrics__
+  - Once a full list of of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in song title with what was available in the Orion API. This was either due to __A)__ slight variation in the song title between Orion and Spotify or __B)__ Orion not having the song in their API.
+
 ## __Lyric Data__
 
-_APIs_ - Apiseed __|__ Spotify
-_Webscraping_ - Genius Lyric Site
-__14__ Albums __|__ __128__ Unique Songs __|__ __62,648__ Total Words Used
+> __14__ Albums __|__ __128__ Unique Songs __|__ __62,648__ Total Words Used
 
 | _Albums_|_Singles_|
 |---|---|
@@ -46,7 +65,16 @@ __14__ Albums __|__ __128__ Unique Songs __|__ __62,648__ Total Words Used
 
 ## __Text Cleaning__
 
+In order to feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable.
 
+__1. Prep text into corpus__
+  - __Regex:__ Some lyric data also contain reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
+  - __Stop Words:__ Stop word were removed covering basic words and I experimented using the starting list from `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers ('uuuuhhh, 'ooooohhs').
+  - __Lemmatization:__ Finally the words were passed through a lemmatization function to reduce plural words to their singular word.
+
+__2. Vectorize words for use in model__
+  - In order to separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TFIDIF vectorizer. Both were used to pass words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
+  - __Count Vectorizer:__ Total Count Frequency
 
 
 # __Models__
@@ -58,7 +86,7 @@ _Sequential_
 2. NMF (Non-negative Matrix Factorization)
 Linear Algebra
 
-![fit, right](assets/Coherence Score.png)
+![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
 
 ### _Topics:_
 
@@ -102,8 +130,11 @@ Life
 Make Right/ Legacy
 ```
 
+## __Word Similarity__
 
-## _Most Similar to:_ __Love__
+Using Word2Vec
+
+### _Most Similar to:_ __Love__
 
 ```
 [('fadin', 0.5092264413833618),
@@ -118,7 +149,7 @@ Make Right/ Legacy
  ('save', 0.37218549847602844)]
  ```
 
-## _Most Similar to:_ __Myself__
+### _Most Similar to:_ __Myself__
 
 ```
 [('bed', 0.5850050449371338),
@@ -133,9 +164,8 @@ Make Right/ Legacy
  ('catch', 0.44258543848991394)]
  ```
 
- ## __Sequential Topic Model__
+##__Sequential Topic Model__
 
- ### _Can we detect changes in word usage for topics_
 
  1. Group Songs by years
  1. Creates Topics over Time
@@ -145,16 +175,16 @@ Make Right/ Legacy
 
 #   _Takeaways_
 
-   Data:
+Data:
 
-   > __Song text data can be inconsistent and difficult to align__
+> _Song text data can be inconsistent and difficult to align_
 
-   > __Balancing manual text cleaning with scalable operations is extremely helpful__
+> __Balancing manual text cleaning with scalable operations is extremely helpful__
 
-   Model:
+Model:
 
-   > __Topic Modeling can assist in finding overarching groups, focus on need (static vs dynamic)__
+> __Topic Modeling can assist in finding overarching groups, focus on need (static vs dynamic)__
 
-   > __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
+> __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
 
-   > __t-SNE can be a great visual tool but difficult to fine tune for classification purposes__
+> __t-SNE can be a great visual tool but difficult to fine tune for classification purposes__
