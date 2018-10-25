@@ -171,7 +171,7 @@ Make Right/ Legacy
 
 ### __Word Similarity__
 
-Using Word2Vec
+Topic grouping was just the beginning of the analysis and wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and applies word association. Using a model called Word2Vec
 
 ### _Most Similar to:_ __Love__
 
@@ -207,9 +207,8 @@ Using Word2Vec
 
 
  1. Group Songs by years
- 1. Creates Topics over Time
- 1. Tune Parameters
-   _Chain Variance_
+ Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for 
+ I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting something called _chain variance_.
 
 
 ## _Conclusion_
