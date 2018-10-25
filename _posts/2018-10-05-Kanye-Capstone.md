@@ -15,7 +15,7 @@ While bad behavior that hurts people is not excusable, the reality is bipolar di
 
 _Bipolar Disorder_
 
-So what is Bipolar Disorder? The NIH defines Bipolar Disorder as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
+So what is Bipolar Disorder? The [NIH defines bipolar disorder](https://www.nimh.nih.gov/health/topics/bipolar-disorder/index.shtml) as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
@@ -35,7 +35,7 @@ First, I collected his lyric data.
 
 __1. Find source for lyrics and create function to access API for each song__
 
-My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using Orion Apieseed lyric API. This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
+My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using [Orion Apieseed lyric API](https://orion.apiseeds.com/documentation/lyrics). This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
 
 `url = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + orion_keys['api_key']`
 
@@ -87,6 +87,7 @@ __1. Prep text into corpus__
   - __Lemmatization:__ Finally the words were passed through a lemmatization function to reduce plural words to their singular word.
 
   ```python
+  # Function to clean text
   def clean_text(song):
       clean_text_step = [song.splitlines()]
 
@@ -219,7 +220,9 @@ Back to the core of our question regarding behavior changes, incorporating chang
 
 ### Machine Learning can provide powerful tools in the detection of changes
 
-What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, and coworkers, the ones they love manage an often misunderstood disorder.
+My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact.
+
+What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, coworkers, and the ones they love manage an often misunderstood disorder.
 
 ### _Applied to mental health treatment_
 - Beyond Doctor Visits
@@ -231,12 +234,12 @@ What we can discover can help the millions of people not only living with bipola
 
 Data:
 
-> __Song text data can be inconsistent and difficult to align__
+> __Model quality is tied directly to the quality of preprocessing data__
 
 > __Balancing manual text cleaning with scalable operations is extremely helpful__
 
 Model:
 
-> __Topic Modeling can assist in finding overarching groups, fleible based on need (static vs dynamic)__
+> __Topic Modeling can assist in finding overarching groups, flexible based on need (static vs dynamic)__
 
 > __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
