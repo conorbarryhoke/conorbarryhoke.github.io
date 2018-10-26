@@ -110,7 +110,7 @@ __1. Prep text into corpus__
 
 __2. Vectorize words for use in model__
 
-To separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TF-IDF vectorizer. Both were used to feed words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
+To separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TF-IDF vectorizer. Both were used to feed words into the LDA and NMF models and analyzed for effectiveness.
   - __Count Vectorizer:__ Total Count Frequency
   - __TFIDF Vectorizer:__ Term Frequency for all Observations
 
@@ -181,13 +181,13 @@ Make Right/ Legacy
 
 ### __Word Similarity__
 
-Topic grouping was just the beginning of the analysis and I wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and uses word association. Using a model called Word2Vec, each word is given a directional vector and words most similar to it will be aligned along the same direction. This is done on a multidimensional plane and difficult to interpret but to help us visualize the model outputs I put them into a t-SNE plot to reorient onto a 2-D space.
+Topic grouping was just the beginning of the analysis and I wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and uses word association. Using a modeling method called `Word2Vec`, each word is given a directional vector and words most similar to it will be aligned along the same direction. This is done on a multidimensional plane and difficult to interpret but to help us visualize the model outputs I put them into a t-SNE plot to reorient onto a 2-D space.
 
 ![Word Vectors](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/t-sne.png)
 
 After the model was compiled, I wanted to isolate particular words that appeared frequently and understand what other similar words he associated with it. I started with _'Love'_:
 
-### _Most Similar to:_ __Love__
+### _Most Similar to_ __Love__
 
 ```
 [('fadin', 0.5092264413833618),
@@ -238,7 +238,7 @@ In exploring the model outputs, I picked up on the same word 'myself' being used
 
 ### Machine Learning can provide powerful tools in the detection of changes
 
-My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact. I am glad to see similar work being done in the field of data science. To learn more, consider reading the article below:
+My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact on people's lives. I am glad to see similar work being done in the field of data science and wanted to acknowledge the contributions currently being made by other individuals. To learn more, consider reading the article below:
 
 [MIT Technology Review: "your Tweets could show if you need help for bipolar disorder"](https://www.technologyreview.com/s/609900/your-tweets-could-show-if-you-need-help-for-bipolar-disorder/)
 
@@ -262,6 +262,6 @@ Model:
 
 > __Topic Modeling can assist in finding overarching groups, flexible based on need (static vs dynamic)__
 
-> __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
+> __Word2Vec creates reliable word association grouping and can be useful on larger corpus in NLP__
 
 To check out more about the project, visit the Github repo [here.](https://github.com/babyakja/GA_capstone_project)
