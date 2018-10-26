@@ -7,7 +7,7 @@ categories: [Project, NLP]
 ---
 
 
-Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his his views on politics and Trump. This has led many to view his actions as something to joke about or just plainly being dismissed as crazy. However, on his latest album __ye__, he openly states on the cover _“I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_.
+Kanye West is one of the most controversial public figures over the last decade and recently has been scrutinized for his views on politics and Trump. This has led many to view his actions as something to joke about or just plainly being dismissed as crazy. However, on his latest album __ye__, he openly states on the cover _“ I hate being Bi-Polar, its awesome”_ and writes about bipolar disorder being his superpower on the track _Yikes_.
 
 ![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.jpg)
 
@@ -19,7 +19,7 @@ __So what is Bipolar Disorder?__ The [NIH defines bipolar disorder](https://www.
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
-Knowing first hand the impact of living with bipolar disorder can have on your personal, financial, and everyday life, the potential of filling in this gap drew me to work on this subject. To close out my time at General Assembly, I wanted my capstone project to center on exploring if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe aspects of manic or depression episodes and help them seek primary care.
+Knowing first hand the impact of living with bipolar disorder can have on your personal, financial, and everyday life, the potential of filling in this gap drew me to work on this subject. To close out my time at General Assembly, I wanted my capstone project to center on exploring if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe aspects of manic or depressive episodes and help them seek primary care.
 
 __Problem Statement__
 
@@ -35,15 +35,15 @@ In order to build out the data to look for changes over time, I collected as muc
 
 First, I collected Kanye's lyric data across all his songs.
 
-__1. Find source for lyrics and create function to access API for each song__
+__1. Find a source for lyrics and create a function to access API for each song__
 
 My preference was to use a reliable API for lyrics to be able to collect all of Kanye's song. I started by searching for possible APIs and settled on using [Orion Apieseed lyric API](https://orion.apiseeds.com/documentation/lyrics). This API allowed to search by song and artist and returned the lyrics for each song. To use this, I just needed to generate a list of each of Kanye's song.
 
 `url = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + orion_keys['api_key']`
 
-__2. Create song list of Kanye's body of work__
+__2. Create a song list of Kanye's body of work__
 
-To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
+To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately, there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
 
 ```python
 from spotipy import Spotify
@@ -55,7 +55,7 @@ album_dict = sp.artist_albums(Kanye_spotify_id,country='US')
 ```
 __3. Collect lyrics__
 
-Once a full list of of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in song title with what was available in the Orion API. This was either due to:
+Once a full list of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in the song title with what was available in the Orion API. This was either due to:
 
 __A)__ slight variation in the song title between Orion and Spotify or
 __B)__ Orion not having the song in their API.
@@ -87,8 +87,8 @@ To get around this issue, I ended up scraping the Genius lyric site for any rema
 To feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable. To do this, several steps to properly clean the data were taken:
 
 __1. Prep text into corpus__
-  - __Regex:__ Some lyric data also contain reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
-  - __Stop Words:__ Stop word were removed covering basic words and I experimented using the starting list from `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers (_'uuuuhhh, 'ooooohhs'_).
+  - __Regex:__ Some lyric data also contains a reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
+  - __Stop Words:__ Stop word were removed and I experimented using the starting list from either `NLTK` and `sklearn` english words since they had different totals to start with. Additional words were added manually based on what was seen such as song fillers (_'uuuuhhh, 'ooooohhs'_).
   - __Lemmatization:__ Finally the words were passed through a lemmatization function to reduce plural words to their singular word.
 
   ```python
@@ -110,7 +110,7 @@ __1. Prep text into corpus__
 
 __2. Vectorize words for use in model__
 
-To separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TFIDIF vectorizer. Both were used to pass words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
+To separate words in preparation for topic modeling or classification, the cleaned lyrics corpus was prepared in both a count vectorizer and a TF-IDF vectorizer. Both were used to feed words into the LDA and NMF models and analyzed for effectiveness. Below contains a snapshot of the parameters used for each.
   - __Count Vectorizer:__ Total Count Frequency
   - __TFIDF Vectorizer:__ Term Frequency for all Observations
 
@@ -128,11 +128,11 @@ To do this, I attempted two different models to group songs into topics:
 
 LDA provided the most interpretable results with the count vectorized lyric data for the word groupings that were being returned.
 
-__But how many topics to go with?__ Similar to selecting the number of clusters to use in k-Means, finding the right balance here requires using several different possible evaluation methods. I chose to use a metric called __Coherence Score__ to help in this process. The coherence score can be calculated across different topic numbers and compare to see which provide the right fidelity to the level you are looking for. My intention was to allocate songs into as many topics as possible that were descriptive but so much that isolated one song per topic. On the flip side, selecting too few topics lumps almost all songs into general groups where uniqueness can not be easily defined.
+__But how many topics to go with?__ Similar to selecting the number of clusters to use in k-Means, finding the right balance here requires using several different possible evaluation methods. I chose to use a metric called __Coherence Score__ to help in this process. The coherence score can be calculated across different topic numbers and compare to see which provide the right fidelity to the level you are looking for. My intention was to allocate songs into as many topics as possible that were descriptive but so much that isolated one song per topic. On the flip side, selecting too few topics lumps almost all songs into general groups where uniqueness cannot be easily defined.
 
 ![Coherence](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Coherence Score.png)
 
-I choose to use a five topic split since it provided a balance in scoring well for coherence and I could interpret the top words into meaningful groups. Listed below were the topics I settled on:
+I choose to use a five-topic split since it provided a balance in scoring well for coherence and I could interpret the top words into meaningful groups. Listed below were the topics I settled on:
 
 ### _Topics_
 
@@ -185,7 +185,7 @@ Topic grouping was just the beginning of the analysis and I wanted to bring in t
 
 ![Word Vectors](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/t-sne.png)
 
-After the model was compile, I wanted to isolate particular words that appeared frequently and understand what other similar words he associated with it. I started with _'Love'_:
+After the model was compiled, I wanted to isolate particular words that appeared frequently and understand what other similar words he associated with it. I started with _'Love'_:
 
 ### _Most Similar to:_ __Love__
 
@@ -220,11 +220,11 @@ Next up was the word _'Myself'_ since it appeared next to love and was fairly fr
  ('catch', 0.44258543848991394)]
  ```
 
-Not something you would like to see associate next to the term 'myself' is anything referencing 'killing'. This type of model could potential reveal someone commonly making references that could lead to harm coming to themselves or others.
+Not something you would like to see associate next to the term 'myself' is anything referencing 'killing'. This type of model could potentially reveal someone commonly making references that could lead to harm coming to themselves or others.
 
 ## __Sequential Topic Model__
 
-Back to the core of our question regarding behavior changes over time, incorporating changes in topics over time a period seemed the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in vocabulary changes across topics that could be detected. This was done by adjusting a parameter called _chain variance_.
+Back to the core of our question regarding behavior changes over time, incorporating changes in topics over time a period seemed the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation group. Then, I tuned parameters in order to create the proper amount of sensitivity in vocabulary changes across topics that could be detected. This was done by adjusting a parameter called _chain variance_.
 
 Visualization was key to understanding the output of the sequential topic model, so using Plotly provided an interactive platform within my Jupyter Notebook to conduct my analysis.
 
@@ -238,17 +238,17 @@ In exploring the model outputs, I picked up on the same word 'myself' being used
 
 ### Machine Learning can provide powerful tools in the detection of changes
 
-My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact. I am glad to see similar work being done in the field of data science. To learn more, consider reading the artile below:
+My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact. I am glad to see similar work being done in the field of data science. To learn more, consider reading the article below:
 
 [MIT Technology Review: "your Tweets could show if you need help for bipolar disorder"](https://www.technologyreview.com/s/609900/your-tweets-could-show-if-you-need-help-for-bipolar-disorder/)
 
-What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, coworkers, and the ones they love manage an often misunderstood disorder.
+What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, coworkers, and the ones they love to manage an often misunderstood disorder.
 
 ### _Applied to mental health treatment_
 - Beyond Doctor Visits
   - Provide an extension to treatment outside of in-person visits
-- Real Time Prognosis
-  - Independent evaluation that is less intrusive and provide benefit when actually needed
+- Real-Time Prognosis
+  - Independent evaluation that is less intrusive and provides benefit when actually needed
 
 ## _Takeaways_
 
