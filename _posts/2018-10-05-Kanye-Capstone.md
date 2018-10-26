@@ -15,7 +15,7 @@ While behavior that is intended to hurt people is not excusable, the reality is 
 
 _Bipolar Disorder_
 
-So what is Bipolar Disorder? The [NIH defines bipolar disorder](https://www.nimh.nih.gov/health/topics/bipolar-disorder/index.shtml) as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
+__So what is Bipolar Disorder?__ The [NIH defines bipolar disorder](https://www.nimh.nih.gov/health/topics/bipolar-disorder/index.shtml) as being characterized by dramatic shifts in mood, energy, and activity levels that affect a person’s ability to carry out day-to-day tasks. These shifts in mood and energy levels are more severe than the normal ups and downs that are experienced by everyone.
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
@@ -25,13 +25,15 @@ __Problem Statement__
 
 > __Using Machine Learning, what can we learn about how Kanye's behavior and mental state has changed over time and can this be used to build models that can help predict bipolar episodes?__
 
+Note: WORDS USED IN LYRICS WERE NOT FILTERED OR CENSORED, SOME EXPLICIT CONTENT AHEAD
+
 ## Data
 
 _Obtain the Data_
 
 In order to build out the data to look for changes over time, I collected as much data as I could that would give insight into what Kanye was thinking. This centered on the two areas where he shares his most revealing personal thoughts: his lyrics and on Twitter.
 
-First, I collected his lyric data.
+First, I collected Kanye's lyric data across all his songs.
 
 __1. Find source for lyrics and create function to access API for each song__
 
@@ -58,9 +60,11 @@ Once a full list of of Kanye's song was made, I could pass the list into a funct
 __A)__ slight variation in the song title between Orion and Spotify or
 __B)__ Orion not having the song in their API.
 
+To get around this issue, I ended up scraping the Genius lyric site for any remaining songs I was not able to get from Orion Apiseed.
+
 ### _Discography Summary_
 
-> __14__ Albums
+> __12__ Albums
 
 > __128__ Unique Songs
 
@@ -80,7 +84,7 @@ __B)__ Orion not having the song in their API.
 
 ### __Text Cleaning__
 
-In order to feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable. To do this, several steps to properly clean the data were taken:
+To feed lyrics into the various models I used, significant time was spent on cleaning and making the data that was collected useable. To do this, several steps to properly clean the data were taken:
 
 __1. Prep text into corpus__
   - __Regex:__ Some lyric data also contain reference to song structure (i.e. name of collaborating artist) and needed to be removed since it wasn't essential to the analysis. This was completed by filtering words through regex using `r"\[[^\]]*\]"` as the sorting method.
@@ -177,7 +181,11 @@ Make Right/ Legacy
 
 ### __Word Similarity__
 
-Topic grouping was just the beginning of the analysis and I wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and applies word association. Using a model called Word2Vec
+Topic grouping was just the beginning of the analysis and I wanted to bring in the ability to group words by similarity. This can be a beneficial tool in understanding how one uses diction and uses word association. Using a model called Word2Vec, each word is given a directional vector and words most similar to it will be aligned along the same direction. This is done on a multidimensional plane and difficult to interpret but to help us visualize the model outputs I put them into a t-SNE plot to reorient onto a 2-D space.
+
+![Word Vectors](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/t-sne.png)
+
+After the model was compile, I wanted to isolate particular words that appeared frequently and understand what other similar words he associated with it. I started with _'Love'_:
 
 ### _Most Similar to:_ __Love__
 
@@ -193,6 +201,9 @@ Topic grouping was just the beginning of the analysis and I wanted to bring in t
  ('hate', 0.38067206740379333),
  ('save', 0.37218549847602844)]
  ```
+A mix of positive and negative terms here is not surprising considering how complicated love is... :heart:
+
+Next up was the word _'Myself'_ since it appeared next to love and was fairly frequent:
 
 ### _Most Similar to:_ __Myself__
 
@@ -209,9 +220,13 @@ Topic grouping was just the beginning of the analysis and I wanted to bring in t
  ('catch', 0.44258543848991394)]
  ```
 
+Not something you would like to see associate next to the term 'myself' is anything referencing 'killing'. This type of model could potential reveal someone commonly making references that could lead to harm coming to themselves or others.
+
 ## __Sequential Topic Model__
 
-Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting a parameter called _chain variance_. Visualization was key to understanding the output of the sequential topic model, so using Plotly provided an interactive platform within my Jupyter Notebook to conduct my analysis.
+Back to the core of our question regarding behavior changes over time, incorporating changes in topics over time a period seemed the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in vocabulary changes across topics that could be detected. This was done by adjusting a parameter called _chain variance_.
+
+Visualization was key to understanding the output of the sequential topic model, so using Plotly provided an interactive platform within my Jupyter Notebook to conduct my analysis.
 
 In exploring the model outputs, I picked up on the same word 'myself' being used and contextually what other words were included in that topic over time. The two charts below show the probability of certain words changing overtime along certain themes. Certain words were less used while others became more likely to appear. If words signaling troubling behavior or thoughts can be flagged, then treatment plans can be built around the needs of the patient at that time.
 
@@ -223,7 +238,9 @@ In exploring the model outputs, I picked up on the same word 'myself' being used
 
 ### Machine Learning can provide powerful tools in the detection of changes
 
-My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact.
+My analysis was an exploration into what was possible at the intersection of machine learning and mental health treatment. As I continue to learn and build on the skills I learn at General Assembly, I hope to be able to contribute more on topics that can have a positive impact. I am glad to see similar work being done in the field of data science. To learn more, consider reading the artile below:
+
+[MIT Technology Review: "your Tweets could show if you need help for bipolar disorder"](https://www.technologyreview.com/s/609900/your-tweets-could-show-if-you-need-help-for-bipolar-disorder/)
 
 What we can discover can help the millions of people not only living with bipolar disorder but also their friends, families, coworkers, and the ones they love manage an often misunderstood disorder.
 
