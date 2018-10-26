@@ -210,7 +210,9 @@ Topic grouping was just the beginning of the analysis and I wanted to bring in t
 
 ## __Sequential Topic Model__
 
-Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting a parameter called _chain variance_.
+Back to the core of our question regarding behavior changes, incorporating changes in topics over time seem the most appropriate for detecting changes. To process the model, I grouped songs by year of release to create a chronological evaluation groups. Then, I tuned parameters in order to create the proper amount of sensitivity in changes . This was done by adjusting a parameter called _chain variance_. Visualization was key to understanding the output of the sequential topic model, so using Plotly provided an interactive platform within my Jupyter Notebook to conduct my analysis.
+
+In exploring the model outputs, I picked up on the same word 'myself' being used and contextually what other words were included in that topic over time. The two charts below show the probability of certain words changing overtime along certain themes. Certain words were less used while others became more likely to appear. If words signaling troubling behavior or thoughts can be flagged, then treatment plans can be built around the needs of the patient at that time.
 
 ![Topic 2006](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/overtime2006.png)
 
@@ -243,3 +245,5 @@ Model:
 > __Topic Modeling can assist in finding overarching groups, flexible based on need (static vs dynamic)__
 
 > __Word2Vec creates reliable word association grouping and can be useful on a much larger corpus__
+
+To check out more about the project, visit the Github repo [here.](https://github.com/babyakja/GA_capstone_project)
