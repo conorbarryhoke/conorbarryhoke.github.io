@@ -11,7 +11,7 @@ Kanye West is one of the most controversial public figures over the last decade 
 
 ![ye](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/kanye-ye.jpg)
 
-While bad behavior that hurts people is not excusable, the reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder, getting the correct treatment to patients is still a hurdle preventing many from getting the help they need.
+While behavior that is intended to hurt people is not excusable, the reality is bipolar disorder affects 6.86 million U.S. adults annually and is often overlooked since it is a misunderstood mental health condition. Commonly misdiagnosed or treatment being avoided all together due to the stigma surrounding bipolar disorder, getting the correct treatment to patients is still a hurdle preventing many from getting the help they need.
 
 _Bipolar Disorder_
 
@@ -19,7 +19,7 @@ So what is Bipolar Disorder? The [NIH defines bipolar disorder](https://www.nimh
 
 ![Bipolar](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Bipolar-NIH.png)
 
-Knowing first hand the impact of living with bipolar disorder can have on your personal, financial, and everyday life, the potential of filling in this gap drew me to work on this subject. So to close out my time at General Assembly, I wanted my capstone project to center on exploring if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe episodes and help them seek primary care.
+Knowing first hand the impact of living with bipolar disorder can have on your personal, financial, and everyday life, the potential of filling in this gap drew me to work on this subject. To close out my time at General Assembly, I wanted my capstone project to center on exploring if it was possible to create tools that can help predict and assist those with bipolar disorder before the onset of the more severe aspects of manic or depression episodes and help them seek primary care.
 
 __Problem Statement__
 
@@ -43,7 +43,7 @@ __2. Create song list of Kanye's body of work__
 
 To generate a full list of Kanye's discography, I wanted to use the most consistent and full reference of work available from him. Spotify was the obvious choice and fortunately there was Spotify wrapper available that allowed accessing using a Python library relatively easy. To access each song, I first had to look up each of Kanye's album using the album id used by Spotify and then extract from the returned dictionary the song name of each entry.
 
-```
+```python
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -54,10 +54,11 @@ album_dict = sp.artist_albums(Kanye_spotify_id,country='US')
 __3. Collect lyrics__
 
 Once a full list of of Kanye's song was made, I could pass the list into a function to collect the lyrics from Orion Apiseed. After starting extracting lyrics, it became quite clear there was an issue since I was getting quite a bit of 404's from individual requests. What was occurring was a mismatch in song title with what was available in the Orion API. This was either due to:
+
 __A)__ slight variation in the song title between Orion and Spotify or
 __B)__ Orion not having the song in their API.
 
-### __Discography Summary__
+### _Discography Summary_
 
 > __14__ Albums
 
@@ -65,17 +66,17 @@ __B)__ Orion not having the song in their API.
 
 > __62,648__ Total Words Used
 
-| _Albums_|_Singles_|
-|---|---|
-|  'KIDS SEE GHOSTS'|  'I Love It'|
-|  'ye'| 'XTCY' |
-|  'The Life Of Pablo'| 'Lift Yourself' |
-|  'Yeezus'||
-|  'My Beautiful Dark Twisted Fantasy'||
-|  '808s & Heartbreak'||
-|  'Graduation'||
-|  'Late Registration'||
-|  'The College Dropout'||
+| __Albums__|__Singles__|
+|:---:|:---:|
+|  KIDS SEE GHOSTS|  I Love It|
+|  ye| XTCY |
+|  The Life Of Pablo| Lift Yourself |
+|  Yeezus||
+|  My Beautiful Dark Twisted Fantasy||
+|  808s & Heartbreak||
+|  Graduation||
+|  Late Registration||
+|  The College Dropout||
 
 ### __Text Cleaning__
 
