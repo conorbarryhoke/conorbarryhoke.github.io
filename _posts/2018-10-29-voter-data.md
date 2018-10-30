@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Predicting Voter Turnout for Travis County
+title: Voter Turnout Predictions for Travis County
 featured-img: travis-co-voter
 mathjax: true
 categories: [Project, Regression]
