@@ -144,10 +144,6 @@ I choose to use a five-topic split since it provided a balance in scoring well f
 
 Each song can be labeled as most likely belong to a particular topic. Most notable, I believe, was more songs being in the topic group __Life__ among his more recent work than in his breakout albums where __Money__ and __Legacy__ appeared to dominate.
 
-![Kanye Discography](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/Kanye-Discography2.png)            
-
-[Interactive Tableau Chart](https://public.tableau.com/profile/james6137#!/vizhome/KanyeWestGraphs/Discography2?publish=yes)
-
 {% include Kanye_tab_leau.html %}
 
 Each song is given a probability of belonging to a particular topic. As an additional means of evaluating topic coherence, I reviewed how well the most probabilist song from each topic belonged there. Overall, this returned solid results.
