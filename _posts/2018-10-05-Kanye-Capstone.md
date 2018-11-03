@@ -148,6 +148,8 @@ Each song can be labeled as most likely belong to a particular topic. Most notab
 
 [Interactive Tableau Chart](https://public.tableau.com/profile/james6137#!/vizhome/KanyeWestGraphs/Discography2?publish=yes)
 
+{% include Kanye_tab_leau.html %}
+
 Each song is given a probability of belonging to a particular topic. As an additional means of evaluating topic coherence, I reviewed how well the most probabilist song from each topic belonged there. Overall, this returned solid results.
 
 ### Highest Probability Song | _Each Topic_
