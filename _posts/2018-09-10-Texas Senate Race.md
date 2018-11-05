@@ -132,7 +132,7 @@ Overall, a majority of post were predicted to be discussing topics indicating hi
 ### Beto: __69%__
 ### Cruz: __31%__
 
-{ % tx_subreddit.html % }
+{% include tx_subreddit.html %}
 
 ### Conclusion
 
