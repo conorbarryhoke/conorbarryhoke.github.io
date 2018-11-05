@@ -11,6 +11,12 @@ The truth is in the details, let’s work together.
 
 ### Area of Focus
 
+_Programming_
+- Python
+- Scala
+
+![codewars_python](https://www.codewars.com/users/babyakja/badges/large)
+
 _Data Science_
 
 - NLP
