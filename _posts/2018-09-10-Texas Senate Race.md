@@ -132,8 +132,7 @@ Overall, a majority of post were predicted to be discussing topics indicating hi
 ### Beto: __69%__
 ### Cruz: __31%__
 
-![TX](https://raw.githubusercontent.com/babyakja/babyakja.github.io/master/assets/img/posts/TX-subreddit.png)
-For the interactive Tableau chart, [vist this page.](https://public.tableau.com/profile/james6137#!/vizhome/Book3-Txsubredditprediction/TXsubreddit?publish=yes)
+{ % tx_subreddit.html % }
 
 ### Conclusion
 
