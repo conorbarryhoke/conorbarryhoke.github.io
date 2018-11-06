@@ -5,5 +5,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: default
-title: James Babyak | Data Science
+title: Conor Barry-Hoke | Data Science
 ---
