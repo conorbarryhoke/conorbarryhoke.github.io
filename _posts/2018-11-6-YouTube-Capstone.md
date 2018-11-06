@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Engaging with YouTube: How to Get Liked
-featured-img: kanye-ye
-mathjax: true
+title: "Engaging with Youtube: How to Get Liked"
+featured-img: cruz-beto
 categories: [Project, NLP]
 ---
+
+
 <li>Part 1: YouTube</li>
 <li>Part 2: The Data</li>
 <li>Part 3: Failing To Regress</li>
