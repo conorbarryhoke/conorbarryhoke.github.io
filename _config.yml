@@ -1,8 +1,8 @@
 # SITE CONFIGURATION
 title: CONOR BARRY-HOKE
 author: GitHub User | conorbarryhoke
-description: > # Meta description of Homepage
-Aspiring data scientist. Experienced Analyst.
+
+
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://conorbarryhoke.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
