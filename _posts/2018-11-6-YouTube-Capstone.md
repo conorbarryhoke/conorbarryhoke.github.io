@@ -26,5 +26,30 @@ stuff
 
 <h2>Part 6: Conclusion</h2>
 
-asdf
+The following chart plots likes and comments, scaled by average view counts, for the genres studied.
+
+They are colored by the ratio of likes to dislikes (Higher Ratio: More Green)
+
 {% include youtube_capstone/engagement_summary.html %}
+
+<p>Halloween music, rock and roll, and KPop all provoke the highest rates of engagement per view, followed by love songs, trap, and EDM. Any adversting campaign would do well to target any of these areas.  </p>
+<p>Some trends to see here:
+  <ul>
+    <li>Videos with less engagement are more favorably liked - there is some threshold that provokes a reaction, and the bar for likes is lower than dislikes / comments</li>
+    <li>The biggest genres are the most normal, clustered within the main band (latin, pop, etc.)</li>
+    <li>Rock fans are quite vocal</li>
+    <li>Highest engagement genres: rock, kpop, halloween (spooky music), EDM, love songs, Trap</li>
+    <li>Classical music provokes comments, but not likes - presumably, they're above such petty interaction</li>
+  </ul>
+</p>
+<p>While this information is informative, there is always room for improvement in the analysis and presentation of findings. Some examples below: </p>
+<ul>
+  <li>Filter out other holiday or event-specific music</li>
+  <li>Incorporate metrics to compare genres across different view counts (e.g. low, medium, high)</li>
+  <li>Host a function to examine individual songs and genres (currently available in notebook)</li>
+  <li>Adjust ratio-based model to predict and compare views</li>
+  <li>Expand tags used to identify existing genres, and isolate new modes of engagement not directly related to genre</li>
+  <li>Continue to refine and engineer new features for use in the regression model, such as a variable to identify 'normal' length songs</li>
+  <li>Examine characteristics of heavy hitter channels like Vevo, and try to classify them</li>
+  <li>Identify tag words with high cross-over to understand how genres are related</li>
+</ul>
