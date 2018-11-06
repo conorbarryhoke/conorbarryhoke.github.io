@@ -13,7 +13,7 @@ categories: [Project, NLP]
 <li>Part 6: Song Features</li>
 
 
-<img src="https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_file/assets/title_text.bmp">
+![TitleCloud]("https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_file/assets/title_text.bmp")
 
 stuff
 stuff
