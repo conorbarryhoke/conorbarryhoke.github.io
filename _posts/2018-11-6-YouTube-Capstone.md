@@ -19,16 +19,37 @@ What makes people find and click on music on YouTube? Does the way a video is po
 <h1>Part 1: YouTube</h1>
 <h2>Background</h2>
 <h3>What's in a video?</h3>
+
 <li>A <strong>title, about 7 words</strong> on average, often following a format like Song - Artist (Official Music Video)</li>
-
+<h3><p> </p></h3>
 ![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/title_text.bmp)
+<h3><p> </p></h3>
 
+<li><strong>10-15 Tags</strong>, not visible, meant to help the video show up in searches (e.g. rap, Cardi B, concert)
+</li>
+<h3><p> </p></h3>
+![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/tag_text.bmp)
+<h3><p> </p></h3>
 
-<h2>Part 2: The Data</h2>
-<h2>Part 3: Failing To Regress</h2>
-<h2>Part 4: Engagement by Genre</h2>
-<h2>Part 5: Bonus Word Clouds</h2>
-<h2>Part 6: Conclusion</h2>
+<li>A longer <strong>description, around 100 words</strong>, usually providing detailed information about the artist and the uploader
+</li>
+<h3><p> </p></h3>
+![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/description_text.bmp)
+<h3><p> </p></h3>
+
+<h2>Getting the Data</h2>
+  <ul>
+    <li>The YouTube API allows for automatic calls to its query function, which returns a list of relevant videos</li>
+    <li>Each individual video can then be queried for summary statistics </li>
+    <li>Time-stamped information, such as when views or comments happened, is not available    </li>
+    <li>The query 'budget' makes it very inefficient to get specific comments </li>
+  </ul>
+
+<h1>Part 2: The Data</h1>
+<h1>Part 3: Failing To Regress</h1>
+<h1>Part 4: Engagement by Genre</h1>
+<h1>Part 5: Bonus Word Clouds</h1>
+<h1>Part 6: Conclusion</h1>
 
 
 
@@ -37,7 +58,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 stuff
 stuff
 
-<h2>Part 6: Conclusion</h2>
+<h1>Part 6: Conclusion</h1>
 
 The following chart plots likes and comments, scaled by average view counts, for the genres studied.
 
