@@ -18,9 +18,9 @@ _Programming_
 
 _Skills_
 
-<strong>Python</strong> pandas | numpy | scipy | scikit-learn | keras | nltk | matplotlib | seaborn
-<strong>Data Management</strong> Tableau | SQL | NLP | Machine Learning | Web Scraping | Data Visualization | Predictive Analytics | Data Wrangling
-<strong>Business Intelligence</strong> Strategic Consulting | Corporate Finance | Project Management | Proposal Writing and Assessment | Client Engagement
+<strong>Python</strong> | pandas | numpy | scipy | scikit-learn | keras | nltk | matplotlib | seaborn
+<strong>Data Management</strong> | Tableau | SQL | NLP | Machine Learning | Web Scraping | Data Visualization | Predictive Analytics | Data Wrangling
+<strong>Business Intelligence</strong> | Strategic Consulting | Corporate Finance | Project Management | Proposal Writing and Assessment | Client Engagement
 
 
 
