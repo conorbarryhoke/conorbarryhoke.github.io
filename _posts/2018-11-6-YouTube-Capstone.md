@@ -27,4 +27,4 @@ stuff
 <h2>Part 6: Conclusion</h2>
 
 asdf
-{% include engagement_summary.html %}
+{% include youtube_capstone/engagement_summary.html %}
