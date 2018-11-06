@@ -12,8 +12,8 @@ categories: [Project, NLP]
 <li>Part 5: Bonus Word Clouds</li>
 <li>Part 6: Song Features</li>
 
+change this now
 
-![TitleCloud]("https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_file/assets/title_text.bmp")
 
 stuff
 stuff
