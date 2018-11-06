@@ -24,7 +24,7 @@ tagline: >
   Making friends with numbers
 
 hero_img: posts/cbh_background.bmp   # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
-
+# img source: https://www.tno.nl/en/focus-areas/information-communication-technology/expertise-groups/data-science/
 email: conor.t.barry@gmail.com # email for form submission
 
 twitter_username: conortbarry # replace with your_twitter_username or comment to remove link from footer
