@@ -17,35 +17,64 @@ What makes people find and click on music on YouTube? Does the way a video is po
 
 <h2><p> </p></h2>
 <h1>Part 1: YouTube</h1>
-<h2>Background</h2>
-<h3>What's in a video?</h3>
 
-<li>A <strong>title, about 7 words</strong> on average, often following a format like Song - Artist (Official Music Video)</li>
-<h3><p> </p></h3>
-![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/title_text.bmp)
-<h3><p> </p></h3>
+  <h2>What's in a video?</h2>
 
-<li><strong>10-15 Tags</strong>, not visible, meant to help the video show up in searches (e.g. rap, Cardi B, concert)
-</li>
-<h3><p> </p></h3>
-![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/tag_text.bmp)
-<h3><p> </p></h3>
+  <li>A <strong>title, about 7 words</strong> on average, often following a format like Song - Artist (Official Music Video)</li>
+  <h3><p> </p></h3>
+  ![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/title_text.bmp)
+  <h3><p> </p></h3>
 
-<li>A longer <strong>description, around 100 words</strong>, usually providing detailed information about the artist and the uploader
-</li>
-<h3><p> </p></h3>
-![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/description_text.bmp)
-<h3><p> </p></h3>
+  <li><strong>10-15 Tags</strong>, not visible, meant to help the video show up in searches (e.g. rap, Cardi B, concert)
+  </li>
+  <h3><p> </p></h3>
+  ![Tag Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/tag_text.bmp)
+  <h3><p> </p></h3>
 
-<h2>Getting the Data</h2>
-  <ul>
-    <li>The YouTube API allows for automatic calls to its query function, which returns a list of relevant videos</li>
-    <li>Each individual video can then be queried for summary statistics </li>
-    <li>Time-stamped information, such as when views or comments happened, is not available    </li>
-    <li>The query 'budget' makes it very inefficient to get specific comments </li>
-  </ul>
+  <li>A longer <strong>description, around 100 words</strong>, usually providing detailed information about the artist and the uploader
+  </li>
+  <h3><p> </p></h3>
+  ![Description Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/description_text.bmp)
+  <h3><p> </p></h3>
+
+  <h2>Getting the Data</h2>
+    <ul>
+      <li>The YouTube API allows for automatic calls to its query function, which returns a list of relevant videos</li>
+      <li>Each individual video can then be queried for summary statistics </li>
+      <li>Time-stamped information, such as when views or comments happened, is not available    </li>
+      <li>The query 'budget' makes it very inefficient to get specific comments </li>
+    </ul>
 
 <h1>Part 2: The Data</h1>
+  <h2>What can we get?</h2>
+    <p>Videos present a remarkably strong relationship across orders of magnitude:</p>
+    <h3><p> </p></h3>
+    ![Description Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/Comments_Dislikes_Likes_views.bmp)
+    <h3><p> </p></h3>
+    <p>
+      <ul>
+        <li>By taking the base10 log, we can see a clear trend across orders of magnitude
+        </li>
+        <li>Actual and log modes:
+          <ul>
+            <li>Average Views per video: <strong>53 Million (M)</strong> (7.7 on the graph)</li>
+            <li>Peak of Views per video: <strong>10 M</strong> (6.96)</li>
+            <li>Peak of Likes per video: <strong>25 thousand (k) (M)</strong> (4.4)</li>
+            <li>Peak of Comments per video: <strong>1.3 k</strong> (3.13)</li>
+            <li>Peak of Dislikes per video: <strong>870</strong> (2.94)</li>
+          </ul>
+        </li>
+        <li>Which means the percentages of engagment per view are very consistent
+          <ul>
+            <li>Likes / View: <strong>.28% </strong> </li>
+            <li>Comments / View: <strong>.01% </strong> </li>
+            <li>Dislikes / View: <strong>.01%</strong> </li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+
+
 <h1>Part 3: Failing To Regress</h1>
 <h1>Part 4: Engagement by Genre</h1>
 <h1>Part 5: Bonus Word Clouds</h1>
