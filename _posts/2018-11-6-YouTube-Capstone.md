@@ -15,7 +15,18 @@ What makes people find and click on music on YouTube? Does the way a video is po
 <li>Part 5: Bonus Word Clouds</li>
 <li>Part 6: Conclusion</li>
 
+<h2>Part 1: YouTube</h2>
+<h3>Background</h3>
+<h4>What's in a video?</h4>
+<li>A <strong>title, about 7 words</strong> on average, often following a format like Song - Artist (Official Music Video)</li>
+![Title Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/title_text.bmp)
 
+
+<h2>Part 2: The Data</h2>
+<h2>Part 3: Failing To Regress</h2>
+<h2>Part 4: Engagement by Genre</h2>
+<h2>Part 5: Bonus Word Clouds</h2>
+<h2>Part 6: Conclusion</h2>
 
 
 
