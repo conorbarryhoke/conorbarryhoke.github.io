@@ -4,40 +4,28 @@ title: About
 permalink: /about/
 ---
 
-I’m an aspiring data scientist who isn’t shy about tackling critical issues. I have always been fascinated by numbers and patterns and use this ability to extract insight and knowledge from hidden details. 
-By using my intuition and skill, I look to see what the data can tell us, and strive to get it to collaborate with the right people to make a positive impact in the world. 
-
-The truth is in the details, let’s work together.
+I am a dangerous data scientist and geek interpreter, the multi-linguist translating logistics, finance, staffing, management, engineering, and strategy. I am the chorus leader, bringing together the disparate voices. I ask the right questions, and have the tools to answer them when no one else can.
 
 ### Area of Focus
 
 _Programming_
 - Python
 - Scala
-
-![codewars_python](https://www.codewars.com/users/babyakja/badges/large)
-
-_Data Science_
-
-- NLP
-- Machine Learning
-- Data Visualization
-- Hypothesis Testing
-- Scikit-Learn
-- Pandas
-- Numpy
 - SQL
-- Keras
+- VBA
+
+![codewars_python](https://www.codewars.com/users/conorbarryhoke/badges/large?logo=false)
+
+_Skills_
+
+<strong>Python</strong> pandas | numpy | scipy | scikit-learn | keras | nltk | matplotlib | seaborn
+<strong>Data Management</strong> Tableau | SQL | NLP | Machine Learning | Web Scraping | Data Visualization | Predictive Analytics | Data Wrangling
+<strong>Business Intelligence</strong> Strategic Consulting | Corporate Finance | Project Management | Proposal Writing and Assessment | Client Engagement
 
 
-_Topics_
 
-- Energy
-- Politics
-- Public Service
-- Music
-- Public Health
+
 
 ### Contact me
 
-[email@me](james.babyak@gmail.com)
+[email@me](conor.t.barry@gmail.com)
