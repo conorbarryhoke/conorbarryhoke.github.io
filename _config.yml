@@ -1,17 +1,14 @@
 # SITE CONFIGURATION
-title: JAMES BABYAK
-author: GitHub User | babyakja
+title: CONOR BARRY-HOKE
+author: GitHub User | conorbarryhoke
 description: > # Meta description of Homepage
-  I’m an aspiring data scientist who isn’t shy about tackling critical issues. 
-  I have always been fascinated by numbers and patterns and use this ability to extract insight and knowledge from hidden details. 
-  By using my intuition and skill, I look to see what the data can tell us, and strive to get it to collaborate with the right people to make a positive impact in the world. 
-  The truth is in the details, let’s work together.
+Aspiring data scientist. Experienced Analyst.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://babyakja.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://conorbarryhoke.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
-  name: James Babyak
+  name: Conor Barry-Hoke
   links:
     - https://twitter.com/jamm_babyak
     - https://www.linkedin.com/in/james-babyak
@@ -24,14 +21,14 @@ navigation: # Navigation links
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Data Scientist for a Positive Impact
+  Making friends with numbers
 
-hero_img: posts/shane-rounce-205187_lg.jpg   # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: posts/cbh_background.bmp   # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
-email: james.babyak@gmail.com # email for form submission
+email: conor.t.barry@gmail.com # email for form submission
 
-twitter_username: jamm_babyak # replace with your_twitter_username or comment to remove link from footer
-github_username:  babyakja # replace with your_github_username or comment to remove link from footer
+twitter_username: conortbarry # replace with your_twitter_username or comment to remove link from footer
+github_username:  conorbarryhoke # replace with your_github_username or comment to remove link from footer
 #instagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
 
 disqus:
