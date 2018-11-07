@@ -2,19 +2,20 @@
 layout: post
 title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
-categories: [Project, NLP]
+categories: [Project, YouTube, Engagement]
 ---
-show update count: 11
+
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
+For engagement Visualizations, jump to part 5
 
 <li><a href="#part1">Part 1: YouTube</a></li>
 <li><a href="#part2">Part 2: The Data</a></li>
 <li><a href="#part3">Part 3: Failing To Regress</a></li>
 <li><a href="#part4">Part 4: Engagement by Genre</a></li>
 <li><a href="#part5">Part 5: Conclusion</a></li>
-<li><a href="#part65">Part 6: Bonus Word Clouds</a></li>
+<li><a href="#part6">Part 6: Bonus Word Clouds</a></li>
 
 
 <h2><p> </p></h2>
@@ -166,7 +167,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
   </ul>
   <p>These keywords do not produce pure classifications, which is actually useful for understanding overlap between genres</p>
   <h3><p> </p></h3>
-  ![genre  correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
+  ![genre_correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
   <h3><p> </p></h3>
   <p>For example, trap music is
     <ul>
@@ -254,41 +255,43 @@ They are colored by the ratio of likes to dislikes (Higher Ratio: More Green)
 <h1><a name="part6">Part 6: Bonus Word Clouds</a></h1>
 <h2>Christian Music</h2>
 <h3><p> </p></h3>
-![christian words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/christian_words.bmp)
+![christian words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/christian_words.bmp)
 <h3><p> </p></h3>
 <h2>Classical Music</h2>
 <h3><p> </p></h3>
-![classical words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/classical_words.bmp)
+![classical words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/classical_words.bmp)
 <h3><p> </p></h3>
 <h2>Dubstep (music?)</h2>
 <h3><p> </p></h3>
-![Dubstep words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/dubstep_words.bmp)
+![Dubstep words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/dubstep_words.bmp)
 <h3><p> </p></h3>
 <h2>EDM</h2>
 <h3><p> </p></h3>
-![EDM words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/edm_words.bmp)
+![EDM words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/edm_words.bmp)
 <h3><p> </p></h3>
 <h2>Halloween Songs</h2>
 <h3><p> </p></h3>
-![halloween words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/halloween_words.bmp)
+![halloween words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/halloween_words.bmp)
 <h3><p> </p></h3>
 <h2>Latin Music</h2>
 <h3><p> </p></h3>
-![Latin words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/latin_words.bmp)
+![Latin words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/latin_words.bmp)
 <h3><p> </p></h3>
 <h2>Hit Music</h2>
 <h3><p> </p></h3>
-![Hit words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/hit_words.bmp)
+![Hit words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/hit_words.bmp)
 <h3><p> </p></h3>
 <h2>Rap Music</h2>
 <h3><p> </p></h3>
-![Rap words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/rap_words.bmp)
+![Rap words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/rap_words.bmp)
 <h3><p> </p></h3>
 <h2>Relaxation and Study Music</h2>
 <h3><p> </p></h3>
-![Relax words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/relaxation_words.bmp)
+![Relax words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/relaxation_words.bmp)
 <h3><p> </p></h3>
 <h2>Trap</h2>
 <h3><p> </p></h3>
-![Trao words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/trap_words.bmp)
+![Trao words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_clouds/trap_words.bmp)
 <h3><p> </p></h3>
+
+<a href="https://github.com/conorbarryhoke/Capstone">Source Code</a>
