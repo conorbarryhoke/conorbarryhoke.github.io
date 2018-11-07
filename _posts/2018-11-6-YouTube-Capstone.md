@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 3
+show update count: 4
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -104,7 +104,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
         </ul>
       </li>
       <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 <strong>.67</strong></li>
-</p>
+  </p>
 <h2>"Results"<h2>
   <p>
     <ul>
