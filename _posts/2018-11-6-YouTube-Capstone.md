@@ -194,6 +194,7 @@ For engagement Visualizations, jump to part 5
       <li>Like / Dislike Ratio: 50%</li>
     </ul>
   </p>
+![genre_correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
 <h3>Visualizations</h3>
 <h4 class="mb-0">Engagement in Most Viewed Videos of Major Genres</h4>
 <p>Most Viewed Videos from each of the biggest categories, sized by favorability (likes / dislikes)</p>
@@ -217,7 +218,7 @@ For engagement Visualizations, jump to part 5
 {% include youtube_capstone/eng_viewranges.html %}
 
 
-![genre_correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
+
 
 
 
