@@ -4,16 +4,17 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
+show update count: 1
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
 
 <li><a href="#part1">Part 1: YouTube</a></li>
-<li>Part 2: The Data</li>
-<li>Part 3: Failing To Regress</li>
-<li>Part 4: Engagement by Genre</li>
-<li>Part 5: Bonus Word Clouds</li>
-<li>Part 6: Conclusion</li>
+<li><a href="#part2">Part 2: The Data</a></li>
+<li><a href="#part3">Part 3: Failing To Regress</a></li>
+<li><a href="#part4">Part 4: Engagement by Genre</a></li>
+<li><a href="#part5">Part 5: Bonus Word Clouds</a></li>
+<li><a href="#part6">Part 6: Conclusion</a></li>
 
 <h2><p> </p></h2>
 <h1><a name="part1">Part 1: YouTube</a></h1>
@@ -38,47 +39,47 @@ What makes people find and click on music on YouTube? Does the way a video is po
   <h3><p> </p></h3>
 
   <h2>Getting the Data</h2>
+  <ul>
+    <li>The YouTube API allows for automatic calls to its query function, which returns a list of relevant videos</li>
+    <li>Each individual video can then be queried for summary statistics </li>
+    <li>Time-stamped information, such as when views or comments happened, is not available    </li>
+    <li>The query 'budget' makes it very inefficient to get specific comments </li>
+  </ul>
+
+<h1><a name="part2">Part 2: The Data</a></h1>
+<h2>What can we get?</h2>
+  <p>Videos present a remarkably strong relationship across orders of magnitude:</p>
+  <h3><p> </p></h3>
+  ![Description Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/Comments_Dislikes_Likes_views.bmp)
+  <h3><p> </p></h3>
+  <p>
     <ul>
-      <li>The YouTube API allows for automatic calls to its query function, which returns a list of relevant videos</li>
-      <li>Each individual video can then be queried for summary statistics </li>
-      <li>Time-stamped information, such as when views or comments happened, is not available    </li>
-      <li>The query 'budget' makes it very inefficient to get specific comments </li>
+      <li>By taking the base10 log, we can see a clear trend across orders of magnitude
+      </li>
+      <li>Actual and log modes:
+        <ul>
+          <li>Average Views per video: <strong>53 Million (M)</strong> (7.7 on the graph)</li>
+          <li>Peak of Views per video: <strong>10 M</strong> (6.96)</li>
+          <li>Peak of Likes per video: <strong>25 thousand (k) (M)</strong> (4.4)</li>
+          <li>Peak of Comments per video: <strong>1.3 k</strong> (3.13)</li>
+          <li>Peak of Dislikes per video: <strong>870</strong> (2.94)</li>
+        </ul>
+      </li>
+      <li>Which means the percentages of engagment per view are very consistent
+        <ul>
+          <li>Likes / View: <strong>.28% </strong> </li>
+          <li>Comments / View: <strong>.01% </strong> </li>
+          <li>Dislikes / View: <strong>.01%</strong> </li>
+        </ul>
+      </li>
     </ul>
-
-<h1>Part 2: The Data</h1>
-  <h2>What can we get?</h2>
-    <p>Videos present a remarkably strong relationship across orders of magnitude:</p>
-    <h3><p> </p></h3>
-    ![Description Words ](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/Comments_Dislikes_Likes_views.bmp)
-    <h3><p> </p></h3>
-    <p>
-      <ul>
-        <li>By taking the base10 log, we can see a clear trend across orders of magnitude
-        </li>
-        <li>Actual and log modes:
-          <ul>
-            <li>Average Views per video: <strong>53 Million (M)</strong> (7.7 on the graph)</li>
-            <li>Peak of Views per video: <strong>10 M</strong> (6.96)</li>
-            <li>Peak of Likes per video: <strong>25 thousand (k) (M)</strong> (4.4)</li>
-            <li>Peak of Comments per video: <strong>1.3 k</strong> (3.13)</li>
-            <li>Peak of Dislikes per video: <strong>870</strong> (2.94)</li>
-          </ul>
-        </li>
-        <li>Which means the percentages of engagment per view are very consistent
-          <ul>
-            <li>Likes / View: <strong>.28% </strong> </li>
-            <li>Comments / View: <strong>.01% </strong> </li>
-            <li>Dislikes / View: <strong>.01%</strong> </li>
-          </ul>
-        </li>
-      </ul>
-    </p>
+  </p>
 
 
-<h1>Part 3: Failing To Regress</h1>
-<h1>Part 4: Engagement by Genre</h1>
-<h1>Part 5: Bonus Word Clouds</h1>
-<h1>Part 6: Conclusion</h1>
+<h1><a name="part3">Part 3: Failing To Regress</a></h1>
+<h1><a name="part4">Part 4: Engagement by Genre</a></h1>
+<h1><a name="part5">Part 5: Bonus Word Clouds</a></h1>
+
 
 
 
@@ -87,7 +88,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 stuff
 stuff
 
-<h1>Part 6: Conclusion</h1>
+<h1><a name="part6">Part 6: Conclusion</a></h1>
 
 The following chart plots likes and comments, scaled by average view counts, for the genres studied.
 
