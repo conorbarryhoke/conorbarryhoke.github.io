@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 6
+show update count: 8
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -102,7 +102,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
           <li>Publication Date - weekend, friday, day of year, day of month, year (controls for more time to see a video after release)</li>
           <li>Meta - has caption, high def vs. standard, content rating</li>
         </ul>
-      <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 <strong>.67</strong> </li>
+      <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 .67 </li>
     </ul>
   </p>
 
@@ -110,7 +110,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
   <p>
     <ul>
       <li>Tried a number of models, PCA, grid search, with random forrest scoring highest at r2 <strong>.48</strong>, .9 MAE on the log (or +/- 1 order of magnitude)\
-      <li>Analysis of engagment on biggest misses showed that I was missing the 'it' factor\</li>
+      <li>Analysis of engagment on biggest misses showed that I was missing the 'it' factor</li>
       <li>Model was still 'good enough' to identify a number of new potential hits that weren't showing up in the main charts</li>
     </ul>
   </p>
@@ -133,6 +133,41 @@ What makes people find and click on music on YouTube? Does the way a video is po
   </p>
 
 <h1><a name="part4">Part 4: Engagement by Genre</a></h1>
+<h2>The Pivot</h2>
+  <p>After failing to satisfactorily predict views, I realized that what I had was a general approach for describing overall engagement. Views are a measure of engagement, as are likes, dislikes, and comments: Something about a video provokes different kinds of reactions from people. We don't need to perfectly predict any one element if we can describe things in a useful way.</p>
+  <p>After messing around with some unsupervised classification, I found what should have been obvious in the first place: genres are pre-existing classes that behave differently. Using the tags and continuously adding popular words to new or existing genres, I was able to identify a number of keywords:</p>
+  <ul>
+    <li><strong>Variant</strong>: acoustic, cover, instrumental, lyric, lyrics </li>
+    <li><strong>Blues </strong>: blues, blue, delta, rhythm, lee hooker</li>
+    <li><strong>Christian </strong>: christ, christian, faith, worship</li>
+    <li><strong>Classical </strong>: bach, beethoven, classical, composer, concerto, debussy, ensemble, orchestra, piano, symphony, sonata</li>
+    <li><strong>Country </strong>: country, western, horse, america, american, soldier, road, home, alabama, denver, haggard, coe</li>
+    <li><strong>Dubstep </strong>: dub, dubstep, skrillex, bass</li>
+    <li><strong>EDM</strong>: aoki, club, edm, house, dance, dj,electr, electronic, electronica, techno,trance, ultra,</li>
+    <li><strong>Extended </strong>: live, album, festival</li>
+    <li><strong>Folk </strong>: folk, banjo, indie</li>
+    <li><strong>Halloween </strong>: creepy, halloween, eerie, horror, wolves</li>
+    <li><strong>Hit </strong>: hit, interscope, new, official, single, sony, warner, vevo</li>
+    <li><strong>Italian </strong>: singolo, nuovo, ultimo</li>
+    <li><strong>Jazz </strong>: jazz, new orleans, rag, ragtime, swing,</li>
+    <li><strong>Kpop </strong>: kpop, korea, korean</li>
+    <li><strong>Latin </strong>: latin, musica, reggaeton</li>
+    <li><strong>Love Songs </strong>: amore, amor, breakup, break-up, love, need </li>
+    <li><strong>Other Rock </strong>: grunge, heavy, metal, punk </li>
+    <li><strong>Pop </strong>: clean, pop </li>
+    <li><strong>Rap </strong>: rap, hip, hop, hiphop, r&b</li>
+    <li><strong>Reggae </strong>: reggae, marley</li>
+    <li><strong>Remix </strong>: remix</li>
+    <li><strong>Romanian </strong>: romania, romanian</li>
+    <li><strong>Relax </strong>: ambient, chill, concentration, downtempo, estudiar, dormir, meditate, meditation, relajar, relax, relaxing, relaxation, trabaja, sleep, sleeping, study, zen</li>
+    <li><strong>Rock </strong>: rock, roll, rocknroll, </li>
+    <li><strong>Trap </strong>: lean, trap</li>
+  </ul>
+  <p>These keywords do not produce pure classifications, which is actually useful for understanding overlap between genres</p>
+  <h3><p> </p></h3>
+  ![test](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
+  <h3><p> </p></h3>
+  <p>Once the data was classified, I controlled for views to find expected likes, dislikes, comments, and like / dislike ratio on each video. With a standard deviation of this projection, I was then able to convert actual counts into a deviation from expected, which allowed for direct comparison of videos across view counts. Without this, the characteristics of each genre would be dominated by the average views of the videos in it. </p>
 <h1><a name="part5">Part 5: Bonus Word Clouds</a></h1>
 
 
@@ -141,8 +176,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 ![test](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/Comments_Dislikes_Likes_views.bmp)
 <h3><p> </p></h3>
 
-stuff
-stuff
+
 
 <h1><a name="part6">Part 6: Conclusion</a></h1>
 
