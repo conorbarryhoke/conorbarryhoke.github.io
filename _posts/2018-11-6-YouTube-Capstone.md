@@ -102,7 +102,6 @@ What makes people find and click on music on YouTube? Does the way a video is po
           <li>Publication Date - weekend, friday, day of year, day of month, year (controls for more time to see a video after release)</li>
           <li>Meta - has caption, high def vs. standard, content rating</li>
         </ul>
-
       <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 <strong>.67</strong> </li>
     </ul>
   </p>
