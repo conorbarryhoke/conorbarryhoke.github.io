@@ -194,26 +194,26 @@ For engagement Visualizations, jump to part 5
       <li>Like / Dislike Ratio: 50%</li>
     </ul>
   </p>
-![genre_correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
+
 <h3>Visualizations</h3>
-<h4 class="mb-0">Engagement in Most Viewed Videos of Major Genres</h4>
+<h4>Engagement in Most Viewed Videos of Major Genres</h4>
 <p>Most Viewed Videos from each of the biggest categories, sized by favorability (likes / dislikes)</p>
 <p>Note that the spread is considerably higher on higher view count videos in general</p>
 {% include youtube_capstone/eng_highviews.html %}
 
-<h4 class="mb-0">Engagement Stats By Genre</h4>
+<h4>Engagement Stats By Genre</h4>
 <p>Move Slider to isolate videos by view count (slight variance in aggregation method from actual)</p>
 {% include youtube_capstone/eng_statsgenre.html %}
 
-<h4 class="mb-0">Engagement Stats By Genre, Measures Isolated</h4>
+<h4>Engagement Stats By Genre, Measures Isolated</h4>
 <p>Move Slider to isolate videos by view count</p>
 {% include youtube_capstone/eng_statsgenre_iso.html %}
 
-<h4 class="mb-0">Engagement Stats By Genre, Across Views</h4>
+<h4>Engagement Stats By Genre, Across Views</h4>
 <p>Select Genres to Compare engagement across views</p>
 {% include youtube_capstone/eng_statsgenre_views.html %}
 
-<h4 class="mb-0">View Range by Genre</h4>
+<h4>View Range by Genre</h4>
 <p>Spread of log of Views</p>
 {% include youtube_capstone/eng_viewranges.html %}
 
