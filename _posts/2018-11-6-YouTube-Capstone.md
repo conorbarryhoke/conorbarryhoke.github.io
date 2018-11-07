@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 2
+show update count: 3
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -103,9 +103,34 @@ What makes people find and click on music on YouTube? Does the way a video is po
           <li>Meta - has caption, high def vs. standard, content rating</li>
         </ul>
       </li>
-      <li>Number to beat: using only likes, dislikes, and comments, able to predict views with r2 <strong>.67</strong></li>
+      <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 <strong>.67</strong></li>
+</p>
+<h2>"Results"<h2>
+  <p>
+    <ul>
+      <li>Tried a number of models, PCA, grid search, with random forrest scoring highest at r2 <strong>.48</strong>, .9 MAE on the log (or +/- 1 order of magnitude)\
+      <li>Analysis of engagment on biggest misses showed that I was missing the 'it' factor\</li>
+      <li>Model was still 'good enough' to identify a number of new potential hits that weren't showing up in the main charts</li>
+    </ul>
   </p>
-
+<h2 class="mb-0">What can we Know? Rules of Thumb</h3>
+  <p>By combining feature importance from Gradient Boost and sign of Linear Regression coefficients, its possible to identify the most significant potential view boosters:</p>
+  <p>
+      <ol>
+        <li>Duration - shorter is better</li>
+        <li>Year - older videos have higher total views, probably due to a combination of 1. more time to accumulate views 2. Feature of the ETL phase which probably failed to retrieve old videos with lower view counts</li>
+        <li>Day of year: release earlier in the year, although recalling the midsummer dip, it is probably safe to say winter videos do better</li>
+        <li>Longer descriptions with more positive tone do better</li>
+        <li>The number of tags is much more important than their sentiment</li>
+        <li>Longer titles do not do well</li>
+        <li>Licensed content is more viewed</li>
+        <li>Including a caption seems to help visibility</li>
+        <li>Use the letter ‘a’ in the title a bunch, but not ‘p’</li>
+        <li>Content cool enough to be prohibited in certain regions is more popular</li>
+        <li>The Pitbull Effect: Include a featuring artist for an easy 14% bump</li>
+      </ol>
+    </ul>
+  </p>
 
 <h1><a name="part4">Part 4: Engagement by Genre</a></h1>
 <h1><a name="part5">Part 5: Bonus Word Clouds</a></h1>
