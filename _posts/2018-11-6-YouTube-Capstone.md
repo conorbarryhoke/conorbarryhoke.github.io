@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 9
+show update count: 10
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -115,7 +115,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
       <li>Model was still 'good enough' to identify a number of new potential hits that weren't showing up in the main charts</li>
     </ul>
   </p>
-<h2 class="mb-0">What can we Know? Rules of Thumb</h3>
+<h2 class="mb-0">What can we Know? Rules of Thumb</h2>
   <p>By combining feature importance from Gradient Boost and sign of Linear Regression coefficients, its possible to identify the most significant potential view boosters:</p>
   <p>
       <ol>
@@ -166,13 +166,41 @@ What makes people find and click on music on YouTube? Does the way a video is po
   </ul>
   <p>These keywords do not produce pure classifications, which is actually useful for understanding overlap between genres</p>
   <h3><p> </p></h3>
-  ![test](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
+  ![genre  correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
   <h3><p> </p></h3>
   <p>Once the data was classified, I controlled for views to find expected likes, dislikes, comments, and like / dislike ratio on each video. With a standard deviation of this projection, I was then able to convert actual counts into a deviation from expected, which allowed for direct comparison of videos across view counts. Without this, the characteristics of each genre would be dominated by the average views of the videos in it. </p>
 
 <h2>Exploring Engagement Across Genres</h2>
+<h3>Interpreting These charts</h3>
+  <p>The numbers shown for engagement are in terms of standard deviation from expected, in order to allow for comparability across metrics. Loosely speaking, it translates to percentage. Its more of a 'more or less' than a substantive metric at this point, so don't get too caught up. </p>
+  <p>That being said, for each metric,  one 'unit' translates to within a percent of expected:
+    <ul>
+      <li>Likes: 50%</li>
+      <li>Comments: 60%</li>
+      <li>Dislikes: 50%</li>
+      <li>Like / Dislike Ratio: 50%</li>
+    </ul>
+<h3>Visualizations</h3>
+<h4 class="mb-0">Engagement in Most Viewed Videos of Major Genres</h4>
+  <p>Most Viewed Videos from each of the biggest categories, sized by favorability (likes / dislikes)</p>
+  <p>Note that the spread is considerably higher on higher view count videos in general</p>
+  {% include youtube_capstone/eng_highviews.html %}
 
+<h4 class="mb-0">Engagement Stats By Genre</h4>
+  <p>Move Slider to isolate videos by view count (slight variance in aggregation method from actual)</p>
+  {% include youtube_capstone/eng_statsgenre.html %}
 
+<h4 class="mb-0">Engagement Stats By Genre, Measures Isolated</h4>
+  <p>Move Slider to isolate videos by view count</p>
+  {% include youtube_capstone/eng_statsgenre_iso.html %}
+
+<h4 class="mb-0">Engagement Stats By Genre, Across Views</h4>
+  <p>Select Genres to Compare engagement across views</p>
+  {% include youtube_capstone/eng_statsgenre_views.html %}
+
+<h4 class="mb-0">View Range by Genre</h4>
+  <p>Spread of log of Views</p>
+  {% include youtube_capstone/eng_viewranges.html %}
 
 
 
