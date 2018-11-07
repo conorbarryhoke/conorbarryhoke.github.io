@@ -217,7 +217,7 @@ For engagement Visualizations, jump to part 5
   {% include youtube_capstone/eng_viewranges.html %}
 
 
-
+![genre_correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
 
 
 
