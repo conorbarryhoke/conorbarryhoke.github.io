@@ -3,6 +3,6 @@ layout: post
 title: How Political is Your Subreddit?
 featured-img: kanye-ye
 mathjax: true
-categories: [Project, NLP]
+categories: [Project, Classification]
 ---
-This is where the post will go.
+{% include posts_html/reddit-politics.html %}

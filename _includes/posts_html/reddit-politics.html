@@ -1,0 +1,71 @@
+Do you often feel suspicious that the posts in your favorite&nbsp;subreddit have a political slant that you just can't put your finger on?<br />
+Even worse, are you worried that the topic is slipping towards The Other party?<br />
+<br />
+<br />
+Are you looking for a safe echo chamber where everyone will agree with you?<br />
+Maybe you prefer a battleground to test your convictions and hone your debate skills?*<br />
+<br />
+<br />
+If you answered yes to any of these questions, you're in luck! I present:&nbsp;the HUAC 9000!<br />
+<br />
+<div class="tableauPlaceholder" id="viz1536467512674" style="position: relative;">
+<noscript><a href='#'><img alt='Public Leanings of Selected Subreddits ' src='https://public.tableau.com/static/images/Re/Republicanvs_DemocratScore/Sheet1/1_rss.png' style='border: none' /></a></noscript><object class="tableauViz" style="display: none;"><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Republicanvs_DemocratScore&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Re&#47;Republicanvs_DemocratScore&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>
+<script type="text/javascript">                    var divElement = document.getElementById('viz1536467512674');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> Color based on identified party leaning of sub (Red for Republican, Blue for Democrat). Hover over circles to see additional detail.<br />
+<br />
+<br />
+<br />
+The HUAC 9000 trained on posts in the official Democrats and Republican subreddits. Once trained, it looked at the subreddits shown here to give a Democratic and Republican strength score to each post. Whichever party scored higher on that post 'won', and whoever won the most posts in each subreddit won it for that party.<br />
+<br />
+<h3>
+Some interesting clusters showed up</h3>
+<br />
+In the lower left - Cats, Aww, and HumansBeingBros (a derivative of AnimalsBeingBros) form a triumvirate of the warm and fuzzies.<br />
+<br />
+Towards the upper right, TodayILearned and AskScience&nbsp;(not far from Science itself), form a little informational corner.<br />
+<br />
+Movies, Books, Videos, and music form a tight group of media consumption right at the center of the graph.<br />
+<br />
+News was very low overall in the political intensity, almost the opposite of WorldNews. Consider which you prefer.<br />
+<h3>
+Both Sides Can't Stop Talking About Eachother&nbsp;</h3>
+The Communism discussion subreddit (for communists, by communists) scores as Republican. Presumably, they are talking about the things that people on /r/Republican are worried about.<br />
+<div>
+<br /></div>
+<div>
+Conversely, The_Donald (a formerly satirical fan page for our current president) showed up as Democrat, presumably for the same reasons.&nbsp;</div>
+<br />
+Take a look at the overlap in most topic words for each:<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-fryxh6MM3gQ/W5V2QS7r2yI/AAAAAAAAGVM/mBwG0TmGxNgRlhzcfihqVyTyHmVMlbBYQCLcBGAs/s1600/OverlapWords.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="720" data-original-width="720" height="640" src="https://2.bp.blogspot.com/-fryxh6MM3gQ/W5V2QS7r2yI/AAAAAAAAGVM/mBwG0TmGxNgRlhzcfihqVyTyHmVMlbBYQCLcBGAs/s640/OverlapWords.png" width="640" /></a></div>
+<br />
+<br />
+<h3>
+So there you have it&nbsp;</h3>
+There's nowhere to hide from politics these days, not even when looking for fun outfits on MaleFashionAdvice. With the HUAC 9000, you can at least ensure its the right kind of politics.<br />
+<br />
+Happy browsing.<br />
+<br />
+<br />
+<h3>
+Additional Detail about interpreting this chart</h3>
+<br />
+<ul>
+<li>500 posts were analyzed, on a scale of 0 to 1 for Democrat and Republican</li>
+<li>A 500 would indicate that every post in the sample was identified as one party or the other with 100% confidence</li>
+<li>Init intensity is a rough measure of how political the subreddit is in general</li>
+<li>Trendline shows the average ratio of Rep score to Dem score, and indicates a small bias towards Republican. More detail on this will be in a forthcoming blog</li>
+<li>Score vs. Party determination</li>
+<ul>
+<li>Subreddits are charted on total Democrat and Republican confidences for each post</li>
+<li>Party leaning was based on the total posts which scored for one party or another, i.e. the stronger of the two</li>
+<li>This leads to edge cases where one party scored higher overall in confidence but lost in the absolute number of posts (basically where red circles are to lower than blue circles or vice versa)</li>
+</ul>
+<li>Backtested data - r/Democrat and Republican both scored higher than average for eachother&nbsp;(i.e. the Democrat subreddit had a strong strength score for Republican), indicating a high conversational overlap</li>
+</ul>
+<br />
+<br />
+For code used to generate this chart, as well as the data itself, see my <a href="https://github.com/conorbarryhoke/Blog_Posts/tree/master/HUAC%209000">GitHub</a>.<br />
+<br />
+*We know you're a troll. Nobody debates honestly on the internet.

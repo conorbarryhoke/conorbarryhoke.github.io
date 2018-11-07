@@ -204,18 +204,22 @@ For engagement Visualizations, jump to part 5
 <h4>Engagement Stats By Genre</h4>
 <p>Move Slider to isolate videos by view count (slight variance in aggregation method from actual)</p>
 {% include youtube_capstone/eng_statsgenre.html %}
+<h3><p> </p></h3>
 
 <h4>Engagement Stats By Genre, Measures Isolated</h4>
 <p>Move Slider to isolate videos by view count</p>
 {% include youtube_capstone/eng_statsgenre_iso.html %}
+<h3><p> </p></h3>
 
 <h4>Engagement Stats By Genre, Across Views</h4>
 <p>Select Genres to Compare engagement across views</p>
 {% include youtube_capstone/eng_statsgenre_views.html %}
+<h3><p> </p></h3>
 
 <h4>View Range by Genre</h4>
 <p>Spread of log of Views</p>
 {% include youtube_capstone/eng_viewranges.html %}
+<h3><p> </p></h3>
 
 
 
