@@ -119,19 +119,19 @@ For engagement Visualizations, jump to part 5
 <h2 class="mb-0">What can we Know? Rules of Thumb</h2>
   <p>By combining feature importance from Gradient Boost and sign of Linear Regression coefficients, its possible to identify the most significant potential view boosters:</p>
   <p>
-      <ol>
-        <li>Duration - shorter is better</li>
-        <li>Year - older videos have higher total views, probably due to a combination of 1. more time to accumulate views 2. Feature of the ETL phase which probably failed to retrieve old videos with lower view counts</li>
-        <li>Day of year: release earlier in the year, although recalling the midsummer dip, it is probably safe to say winter videos do better</li>
-        <li>Longer descriptions with more positive tone do better</li>
-        <li>The number of tags is much more important than their sentiment</li>
-        <li>Longer titles do not do well</li>
-        <li>Licensed content is more viewed</li>
-        <li>Including a caption seems to help visibility</li>
-        <li>Use the letter ‘a’ in the title a bunch, but not ‘p’</li>
-        <li>Content cool enough to be prohibited in certain regions is more popular</li>
-        <li>The Pitbull Effect: Include a featuring artist for an easy 14% bump</li>
-      </ol>
+    <ol>
+      <li>Duration - shorter is better</li>
+      <li>Year - older videos have higher total views, probably due to a combination of 1. more time to accumulate views 2. Feature of the ETL phase which probably failed to retrieve old videos with lower view counts</li>
+      <li>Day of year: release earlier in the year, although recalling the midsummer dip, it is probably safe to say winter videos do better</li>
+      <li>Longer descriptions with more positive tone do better</li>
+      <li>The number of tags is much more important than their sentiment</li>
+      <li>Longer titles do not do well</li>
+      <li>Licensed content is more viewed</li>
+      <li>Including a caption seems to help visibility</li>
+      <li>Use the letter ‘a’ in the title a bunch, but not ‘p’</li>
+      <li>Content cool enough to be prohibited in certain regions is more popular</li>
+      <li>The Pitbull Effect: Include a featuring artist for an easy 14% bump</li>
+    </ol>
   </p>
 
 <h1><a name="part4">Part 4: Engagement by Genre</a></h1>
@@ -184,9 +184,9 @@ For engagement Visualizations, jump to part 5
   <p>Once the data was classified, I controlled for views to find expected likes, dislikes, comments, and like / dislike ratio on each video. With a standard deviation of this projection, I was then able to convert actual counts into a deviation from expected, which allowed for direct comparison of videos across view counts. Without this, the characteristics of each genre would be dominated by the average views of the videos in it. </p>
 
 <h2>Exploring Engagement Across Genres</h2>
-<h3>Interpreting These charts</h3>
+<h3>Interpreting These Charts</h3>
   <p>The numbers shown for engagement are in terms of standard deviation from expected, in order to allow for comparability across metrics. Loosely speaking, it translates to percentage. Its more of a 'more or less' than a substantive metric at this point, so don't get too caught up. </p>
-  <p>That being said, for each metric,  one 'unit' translates to within a percent of expected:
+  <p>That being said, for each metric, one 'unit' translates to within a percent of expected:
     <ul>
       <li>Likes: 50%</li>
       <li>Comments: 60%</li>
