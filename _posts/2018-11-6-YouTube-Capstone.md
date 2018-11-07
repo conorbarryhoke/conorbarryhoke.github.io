@@ -111,8 +111,8 @@ For engagement Visualizations, jump to part 5
 <h2>"Results"</h2>
   <p>
     <ul>
-      <li>Tried a number of models, PCA, grid search, with random forrest scoring highest at r2 <strong>.48</strong>, .9 MAE on the log (or +/- 1 order of magnitude)\
-      <li>Analysis of engagment on biggest misses showed that I was missing the 'it' factor</li>
+      <li>Tried a number of models, PCA, grid search, with random forrest scoring highest at r2 <strong>.48</strong>, .9 MAE on the log (or +/- 1 order of magnitude)</li>
+      <li>Analysis of engagement on biggest misses showed that I was missing the 'it' factor</li>
       <li>Model was still 'good enough' to identify a number of new potential hits that weren't showing up in the main charts</li>
     </ul>
   </p>
