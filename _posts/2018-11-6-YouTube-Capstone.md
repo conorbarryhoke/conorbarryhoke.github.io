@@ -8,7 +8,7 @@ categories: [Project, NLP]
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
 
-<li>Part 1: YouTube</li>
+<li><a href="#part1">Part 1: YouTube</a></li>
 <li>Part 2: The Data</li>
 <li>Part 3: Failing To Regress</li>
 <li>Part 4: Engagement by Genre</li>
@@ -16,7 +16,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 <li>Part 6: Conclusion</li>
 
 <h2><p> </p></h2>
-<h1>Part 1: YouTube</h1>
+<h1><a name="part1">Part 1: YouTube</a></h1>
 
   <h2>What's in a video?</h2>
 
@@ -105,7 +105,7 @@ They are colored by the ratio of likes to dislikes (Higher Ratio: More Green)
     <li>Classical music provokes comments, but not likes - presumably, they're above such petty interaction</li>
   </ul>
 </p>
-<p>While this information is informative, there is always room for improvement in the analysis and presentation of findings. Some examples below: </p>
+<p>While this data is informative, there is always room for improvement in the analysis and presentation of findings. Some examples below: </p>
 <ul>
   <li>Filter out other holiday or event-specific music</li>
   <li>Incorporate metrics to compare genres across different view counts (e.g. low, medium, high)</li>
