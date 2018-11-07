@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 10
+show update count: 11
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -168,6 +168,18 @@ What makes people find and click on music on YouTube? Does the way a video is po
   <h3><p> </p></h3>
   ![genre  correlation](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
   <h3><p> </p></h3>
+  <p>For example, trap music is
+    <ul>
+      <li>22% Remixes (mainly of hit songs)</li>
+      <li>18% Latin Music</li>
+      <li>14% Dubstep</li>
+      <li>13% Covers and instrumentals</li>
+      <li>7% Rap samples</li>
+      <li>6% Festival music</li>
+      <li>5% Trying to scare people into listening</li>
+      <li>3% EDM</li>
+    </ul>
+  </p>
   <p>Once the data was classified, I controlled for views to find expected likes, dislikes, comments, and like / dislike ratio on each video. With a standard deviation of this projection, I was then able to convert actual counts into a deviation from expected, which allowed for direct comparison of videos across view counts. Without this, the characteristics of each genre would be dominated by the average views of the videos in it. </p>
 
 <h2>Exploring Engagement Across Genres</h2>
@@ -204,9 +216,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 
 
 
-<h3><p> </p></h3>
-![test](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/Comments_Dislikes_Likes_views.bmp)
-<h3><p> </p></h3>
+
 
 
 
@@ -242,3 +252,43 @@ They are colored by the ratio of likes to dislikes (Higher Ratio: More Green)
 
 
 <h1><a name="part6">Part 6: Bonus Word Clouds</a></h1>
+<h2>Christian Music</h2>
+<h3><p> </p></h3>
+![christian words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/christian_words.bmp)
+<h3><p> </p></h3>
+<h2>Classical Music</h2>
+<h3><p> </p></h3>
+![classical words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/classical_words.bmp)
+<h3><p> </p></h3>
+<h2>Dubstep (music?)</h2>
+<h3><p> </p></h3>
+![Dubstep words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/dubstep_words.bmp)
+<h3><p> </p></h3>
+<h2>EDM</h2>
+<h3><p> </p></h3>
+![EDM words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/edm_words.bmp)
+<h3><p> </p></h3>
+<h2>Halloween Songs</h2>
+<h3><p> </p></h3>
+![halloween words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/halloween_words.bmp)
+<h3><p> </p></h3>
+<h2>Latin Music</h2>
+<h3><p> </p></h3>
+![Latin words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/latin_words.bmp)
+<h3><p> </p></h3>
+<h2>Hit Music</h2>
+<h3><p> </p></h3>
+![Hit words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/hit_words.bmp)
+<h3><p> </p></h3>
+<h2>Rap Music</h2>
+<h3><p> </p></h3>
+![Rap words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/rap_words.bmp)
+<h3><p> </p></h3>
+<h2>Relaxation and Study Music</h2>
+<h3><p> </p></h3>
+![Relax words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/relaxation_words.bmp)
+<h3><p> </p></h3>
+<h2>Trap</h2>
+<h3><p> </p></h3>
+![Trao words](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/trap_words.bmp)
+<h3><p> </p></h3>
