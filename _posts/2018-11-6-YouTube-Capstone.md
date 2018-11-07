@@ -4,7 +4,7 @@ title: "Engaging with Youtube: How to Get Liked"
 featured-img: Comments_Dislikes_Likes_views
 categories: [Project, NLP]
 ---
-show update count: 8
+show update count: 9
 <h2>Introduction</h2>
 What makes people find and click on music on YouTube? Does the way a video is posted have anything to do with how popular it gets? In parts 1-3, I try and partly succeed in predicting how big a music-type video will get. For parts 4-6, I end up pivoting to identifying the most engaging video tags, in an effort to optimize engagement per view for a potential advertiser. In the end, I try to answer the age-old question: What the hell is trap music, actually?
 
@@ -13,8 +13,9 @@ What makes people find and click on music on YouTube? Does the way a video is po
 <li><a href="#part2">Part 2: The Data</a></li>
 <li><a href="#part3">Part 3: Failing To Regress</a></li>
 <li><a href="#part4">Part 4: Engagement by Genre</a></li>
-<li><a href="#part5">Part 5: Bonus Word Clouds</a></li>
-<li><a href="#part6">Part 6: Conclusion</a></li>
+<li><a href="#part5">Part 5: Conclusion</a></li>
+<li><a href="#part65">Part 6: Bonus Word Clouds</a></li>
+
 
 <h2><p> </p></h2>
 <h1><a name="part1">Part 1: YouTube</a></h1>
@@ -102,11 +103,11 @@ What makes people find and click on music on YouTube? Does the way a video is po
           <li>Publication Date - weekend, friday, day of year, day of month, year (controls for more time to see a video after release)</li>
           <li>Meta - has caption, high def vs. standard, content rating</li>
         </ul>
-      <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 .67 </li>
+      <li>Number to beat: using only likes, dislikes, and comments, we are able to predict views with r2 <strong>.67</strong> </li>
     </ul>
   </p>
 
-<h2>"Results"<h2>
+<h2>"Results"</h2>
   <p>
     <ul>
       <li>Tried a number of models, PCA, grid search, with random forrest scoring highest at r2 <strong>.48</strong>, .9 MAE on the log (or +/- 1 order of magnitude)\
@@ -168,7 +169,10 @@ What makes people find and click on music on YouTube? Does the way a video is po
   ![test](https://raw.githubusercontent.com/conorbarryhoke/conorbarryhoke.github.io/master/assets/img/posts/capstone_files/assets/genre_correlation.bmp)
   <h3><p> </p></h3>
   <p>Once the data was classified, I controlled for views to find expected likes, dislikes, comments, and like / dislike ratio on each video. With a standard deviation of this projection, I was then able to convert actual counts into a deviation from expected, which allowed for direct comparison of videos across view counts. Without this, the characteristics of each genre would be dominated by the average views of the videos in it. </p>
-<h1><a name="part5">Part 5: Bonus Word Clouds</a></h1>
+
+<h2>Exploring Engagement Across Genres</h2>
+
+
 
 
 
@@ -178,7 +182,7 @@ What makes people find and click on music on YouTube? Does the way a video is po
 
 
 
-<h1><a name="part6">Part 6: Conclusion</a></h1>
+<h1><a name="part5">Part 5: Conclusion</a></h1>
 
 The following chart plots likes and comments, scaled by average view counts, for the genres studied.
 
@@ -207,3 +211,6 @@ They are colored by the ratio of likes to dislikes (Higher Ratio: More Green)
   <li>Examine characteristics of heavy hitter channels like Vevo, and try to classify them</li>
   <li>Identify tag words with high cross-over to understand how genres are related</li>
 </ul>
+
+
+<h1><a name="part6">Part 6: Bonus Word Clouds</a></h1>
