@@ -193,6 +193,7 @@ For engagement Visualizations, jump to part 5
       <li>Dislikes: 50%</li>
       <li>Like / Dislike Ratio: 50%</li>
     </ul>
+  </p>
 <h3>Visualizations</h3>
 <h4 class="mb-0">Engagement in Most Viewed Videos of Major Genres</h4>
   <p>Most Viewed Videos from each of the biggest categories, sized by favorability (likes / dislikes)</p>
