@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What does it take to win at Kaggle? An Introduction to Data Strategy
-featured-img: kanye-ye
+featured-img: attempts_score_bubble
 mathjax: true
 categories: [Meta]
 ---
