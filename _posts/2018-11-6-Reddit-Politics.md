@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Political is Your Subreddit?
-featured-img: kanye-ye
+featured-img: repdem_img
 mathjax: true
 categories: [Project, Classification]
 ---
