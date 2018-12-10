@@ -1,8 +1,8 @@
 <h1>Data Science Presentations</h1>
 It is 11:15 AM, and I am sitting down to blog about how to publish a blog like this.
 
-Setting up “Jupyter Notebooks” on Google Drive
-Technically, the Google Drive platform for executing Python code is Colaboratory, but it is built on Jupyter. Either way, the only thing different about running code from Google Drive is the notebook setup.
+<h2>Setting up “Jupyter Notebooks” on Google Drive</h2>
+Technically, the Google Drive platform for executing Python code is Colaboratory, but it is built on Jupyter (thus the quotes). Either way, the only thing different about running code from Google Drive is the notebook setup.
 
 To get started, go to your drive.google.com/ and click "New -> More -> Connect apps".
 
@@ -12,8 +12,8 @@ Search for and add Colaboratory (yes this is spelled with only one L).
 
 Now when you click New, you should be able to create and run ipython files from your Drive. That’s it - no installation, no configuration, no permissions.
 
-Running Pandas (and everything else)
-Refer to this sample notebook.
+<h2>Running Pandas (and everything else)</h2>
+Once you've enabled Colaboratory, <a href="https://drive.google.com/open?id=1lWZ_RijgbyyxZ4fyErLftMcr_27YTJoa">refer to the sample notebook.</a>
 
 In order to reference data files located on your Google Drive, you’ll first need to mount your drive. This can be done at the top level:
 
@@ -47,22 +47,24 @@ For one, it shortens references to
 For two, this allows for easier conversion if you’ve been working with a local copy.
 
 
-Notes on running common packages:
-The current (as of December 12, 2018) version of Colab defaults to numpy 14.6, which is missing features like quantile. Additionally there are some issues persisting upgraded packages, so I recommend putting any necessary installs up front
-Memory management: This whole thing is executed in browers. To keep an eye on memory, open Google’s Task manager with Shift + Esc
-Dark themes are note available but have been noted as a priority
-Certain Jupyter magics (%%timeit) can be run as normal
-Matplotlib inline is on by default
-The notebook is allotted 13 GB of memory and will kill the runtime if this is exceeded - for bigger projects, check out this excellent Google Cloud notebook set up tutorial
+<h3>Notes on running common packages</h3>
+<ul>
+<li>The current (as of December 12, 2018) version of Colab defaults to numpy 14.6, which is missing features like quantile. Additionally there are some issues persisting upgraded packages, so I recommend putting any necessary installs up front</li>
+<li>Memory management: This whole thing is executed in browers. To keep an eye on memory, open Google’s Task manager with Shift + Esc</li>
+<li>Dark themes are note available but have been noted as a priority</li>
+<li>Certain Jupyter magics (%%timeit) can be run as normal</li>
+<li>Matplotlib inline is on by default</li>
+<li>The notebook is allotted 13 GB of memory and will kill the runtime if this is exceeded - for bigger projects, check out this excellent Google Cloud notebook set up tutorial</li>
+</ul>
 
 So that’s it. On to presenting this…
 
-Using Google Sites to Present Data Science
+<h2>Using Google Sites to Present Data Science</h2>
 Slide Decks are a good way to condense business ideas into an easy-to-use and follow linear narrative. They can be frustrating to impossible to fit with presenting the kind of things you come up with doing Data Science. In addition to the fact that the process itself is non-linear, trying to get an interactive Tableau Dashboard into a brief requires some major heartache.
 
 Instead, a web-based presentation offers substantially more flexibility and plays more nicely with the ever-growing list of web-based visualization tools. Setting up a website for one briefing is an obvious waste of time for anyone that isn’t already skilled in it. Enter Google Sites. Sites takes HTML and can stand alone inside your Google Drive. This means everything is visually in the same place, and gives you a shareable HTML document that can be restricted to your organization.
 
-There a variety of options for laying everything out. To view the sample page, click here.
+There a variety of options for laying everything out. To view the sample page, <a href="https://sites.google.com/view/presentation-template-ds/home">click here</a>.
 
-Conclusion
+<h1>Conclusion</h1>
 So there you have it. A fast and easy way to do data science for yourself and your organization. Total time to write this blog, upload everything, and get the Notebook working: 2 hours.
