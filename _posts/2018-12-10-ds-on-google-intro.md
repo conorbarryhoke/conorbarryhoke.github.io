@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Doing Data Science on Google Drive
-featured-img: repdem_img
+featured-img: google-colab-intro
 mathjax: true
 categories: [Tutorial]
 ---
