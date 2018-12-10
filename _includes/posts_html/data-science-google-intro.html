@@ -1,0 +1,68 @@
+Data Science Presentations
+It is 11:15 AM, and I am sitting down to blog about how to publish a blog like this.
+
+Setting up “Jupyter Notebooks” on Google Drive
+Technically, the Google Drive platform for executing Python code is Colaboratory, but it is built on Jupyter. Either way, the only thing different about running code from Google Drive is the notebook setup.
+
+To get started, go to your drive.google.com/ and click "New -> More -> Connect apps".
+
+
+
+Search for and add Colaboratory (yes this is spelled with only one L).
+
+Now when you click New, you should be able to create and run ipython files from your Drive. That’s it - no installation, no configuration, no permissions.
+
+Running Pandas (and everything else)
+Refer to this sample notebook.
+
+In order to reference data files located on your Google Drive, you’ll first need to mount your drive. This can be done at the top level:
+
+	[1] from google.colab import drive
+	[2] drive.mount('/content/gdrive', force_remount=True)
+
+Google will open a new tab (or try to - careful if you have an add blocker on), and ask for your permission. Do this.
+
+Importing is as easy as its ever been:
+
+	[1] import pandas as pd
+
+Installing a new package works the same as for Jupyter Notebooks:
+
+`	[1] !pip install --upgrade numpy
+
+To read a csv from google drive, the ‘home’ path looks a little different. gdrive/My Drive is the path for your drive ‘front page’, and folder extensions look the same after that. For example, the filepath for the sample DataFrame in the example notebook:
+
+	'gdrive/My Drive/Blog/Google Colab How To Blog/'
+
+From here, you can pd.read_csv and df.to_csv as usual.
+
+I also like to store the first part of the path for a given notebook as data_path, for example:
+
+	data_path = 'gdrive/My Drive/Blog/Data Science/Data'
+
+For one, it shortens references to
+
+	df2 = pd.read_csv(data_path + 'sample_df.csv')
+
+For two, this allows for easier conversion if you’ve been working with a local copy.
+
+
+Notes on running common packages:
+The current (as of December 12, 2018) version of Colab defaults to numpy 14.6, which is missing features like quantile. Additionally there are some issues persisting upgraded packages, so I recommend putting any necessary installs up front
+Memory management: This whole thing is executed in browers. To keep an eye on memory, open Google’s Task manager with Shift + Esc
+Dark themes are note available but have been noted as a priority
+Certain Jupyter magics (%%timeit) can be run as normal
+Matplotlib inline is on by default
+The notebook is allotted 13 GB of memory and will kill the runtime if this is exceeded - for bigger projects, check out this excellent Google Cloud notebook set up tutorial
+
+So that’s it. On to presenting this…
+
+Using Google Sites to Present Data Science
+Slide Decks are a good way to condense business ideas into an easy-to-use and follow linear narrative. They can be frustrating to impossible to fit with presenting the kind of things you come up with doing Data Science. In addition to the fact that the process itself is non-linear, trying to get an interactive Tableau Dashboard into a brief requires some major heartache.
+
+Instead, a web-based presentation offers substantially more flexibility and plays more nicely with the ever-growing list of web-based visualization tools. Setting up a website for one briefing is an obvious waste of time for anyone that isn’t already skilled in it. Enter Google Sites. Sites takes HTML and can stand alone inside your Google Drive. This means everything is visually in the same place, and gives you a shareable HTML document that can be restricted to your organization.
+
+There a variety of options for laying everything out. To view the sample page, click here.
+
+Conclusion
+So there you have it. A fast and easy way to do data science for yourself and your organization. Total time to write this blog, upload everything, and get the Notebook working: 2 hours.
