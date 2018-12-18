@@ -1,0 +1,259 @@
+This write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer:
+Move into a subfolder from current path:
+  cd ./[folder name]
+Move up a folder level:
+  cd ../
+Home directory:
+  ~
+Create a subfolder in the current working directory:
+  mkdir [folder name]
+Create a text file in the current directory:
+  touch [filename].txt
+List contents of current directory (subfolders and files)
+  ls
+Display full path of current working directory:
+  pwd
+
+
+<h1>Step 1: The Setup</h1>
+<h2>Step 1a: Create a project</h2>
+
+Search Google Cloud Compute Engine
+<br></br>
+Should take you to a page with a console link
+<br></br>
+<p>In the upper left, there should be an option to start a new project. If you’ve used anything with an API in the past, you can see it there as well.
+Create a new project and write down the name that google assigns it (You can see it from the projects drop down later if you forget)
+If you haven’t already, you will need to attach a payment account, however Google gives you $300 over 365 days for free.
+Important: Stop your instance when you’re done to save money!</p>
+<h2>Step 1b: Creating a VM</h2>
+<p><a href="https://www.youtube.com/watch?v=zzMCKv1g5z0">View this video if you can</a></p>
+<br></br>
+Here is a summary of the salient points:
+<ol>
+  <li>Select a region - video used us-west 1, zone 1b, but I used us-east1-b and it was fine</li>
+  <li>Select machine type - I used 8 vCPUs, but this can be changed later</li>
+  <li>Boot disk -
+    <ol type='a'>
+    <li>Video used Ubuntu 16.04 LTS xenial, I used 18.04 cosmic (I recommend the later for python3 compatability)</li>
+    <li>At the bottom of this page, you can select more than 10 GB persistent if you think it will be necessary, but this could incur additional charges.</li>
+    </ol></li>
+  <li>Firewall</li>
+    <ol type='a'>
+      <li>Check allow HTTP and HTTPS traffic</li>
+      <li>click show more, then Disks, then uncheck “delete boot disk when instance is deleted”</li>
+    </ol>
+  <li>Continue - this may take a moment</li>
+  <li>Once it is created, <b>copy</b> down the External IP on the instance (something like ###.###.###.###)</li>
+    <ol type='a'>
+      <li><b>Important!</b> When you are done with the session, check the instance and click Stop</li>
+      <li>You’re static storage will be saved, so no worries there</li>
+    </ol>
+
+</ol>
+
+<br></br>
+At this point the VM is established, but we need some additional configuration
+<ol>
+  <li>Click on the horizontal bars in the upper left</li>
+  <li>VPC Network -> VPC Network -> External IP addresses</li>
+  <li>On the instance, change Type Ephemeral to Static, and record the name (I used <b>blogexample)</b></li>
+  <li>From the left bar, Firewall rules, then from the top create firewall rule</li>
+    <ol type='a'>
+      <li>Give it a name, and record: (e.g. myfirewallrule)</li>
+      <li>Change Targets to from Specified Target Tags to All instances in the network</li>
+      <li>Source IP Ranges: 0.0.0.0/0</li>
+      <li>Under Specified Protocols and Ports check "TCP" and give it a number (I used 5000. If you're following along with the video, he first uses 1000 which is reserved and will not work)</li>
+    </ol>
+</ol>
+<p>From the horizontal bars, head back to Compute Engine - VM Instance</p>
+
+<h1>Step 2 Configuring the VM</h1>
+<h2>Step 2A: Installing python3, pip3, and jupyter notebooks</h2>
+Skip to the summary below for a list of these steps
+If you are following along with the video, installing python3 instead of python2 is the main point of divergence here
+To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you are given two options, enter [1]
+<ol>
+  <li>From the VM instance screen, click SSH</li>
+  <li>Record user name and instance, for example username@instance-1. This will be needed for copying files</li>
+
+  <li>In order:</li>
+  <ol type='a'>
+    <li>sudo apt-get update</li>
+    <li>sudo apt-get --assume-yes upgrade (keep local version)</li>
+    <li>sudo apt-get --assume-yes install software-properties-common</li>
+    <li>sudo apt-get install python-setuptools python-dev build-essential</li>
+    <li>From the newer Ubuntu: sudo apt install python3-pip</li>
+    <li>For the example in the video: sudo easy_install pip</li>
+    <li>From my example: sudo pip3 install jupyter</li>
+    <li>From older (video example): sudo pip install jupyter</li>
+    <li>jupyter notebook --generate-config</li>
+    <li>sudo nano ~/.jupyter/jupyter_notebook_config.py</li>
+      <ol type ='i'>
+        <li>Press down arrow to navigate just under # Configuration file</li>
+        <li>Immediately under # Configuratio file for jupyter-notebook, enter the following block (press down arrow to navigate):</li>
+          c = get_config()
+          c.NotebookApp.ip= '*'
+          c.NotebookApp.open_browser = False
+          c.NotebookApp.port = 5000
+        <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
+      </ol>
+    <li>Enter: jupyter notebook password, then type your password. The cursor will not move, however copy+paste works fine</li>
+  </ol>
+</ol>
+
+<h2>Step 2B: Running Jupyter Notebook</h2>
+These steps are stand alone from above, and are all that you need to do to run Jupyter notebooks. Once set up, this can be done from any point in the command line.
+The first couple steps deal with setting up subfolders to work in, which I like to do to avoid writing things in root.
+You don't have to, but the rest of the cloud steps assume you have these subfolders set up.
+
+Note that in the browser window, Jupyter will launch from whatever directory you're in when you type the open command.
+From the SSH connection, do the following
+<ol>
+  <li>To set up project paths:</li>
+    <ol type='a'>
+      <li>from command line: mkdir projects</li>
+      <li>cd ./projects</li>
+    </ol>
+  <li>Launch Jupyter notebook:</li>
+    <ol type='a'>
+      <li>jupyter notebook --ip=0.0.0.0 --port=5000 (whatever you put)</li>
+      <li>Go to IP:port ([your IP goes here]:5000) in a new browser tab</li>
+      <li>Enter password and run Jupyter</li>
+    </ol>
+  <li>Intalling packages</li>
+    <ol type='a'>
+      <li>pip3 install can be run directly using the second window if you have tmux open</li>
+      <li>Or, from Jupyter notebook you can use !sudo pip3 install pandas (or whatever) and it will work fine</li>
+      <li>Note: There is a difference. With my installation (aka python3), you will need to use pip3, which otherwise works the same</li>
+    </ol>
+  <li>Closing Jupyter</li>
+    <ol type='a'>
+      <li>Quit as normal</li>
+      <li>From command line, Ctrl + C, then y</li>
+      <li>Close everything by typing exit</li>
+    </ol>
+</ol>
+<p>At this point, you are all set up, but of course you want to actually use data from somewhere.</p>
+<p>Note: When setting up a new notebook, you may need to use !pip3 install instead of !pip install</p>
+
+<h1>Step 3: Setting Up Cloud Storage as an intermediary</h1>
+Now the good stuff. By 'logging in' to Google's Cloud utility (gsutil), we can access files in Cloud storage buckets.
+This makes it much easier to get files onto your VM. Naturally, you'll want to pull them back down when you're finished.
+
+<h2>Step 3a: Set up a Google Cloud Storage Bucket</h2>
+<ol>
+  <li>From The Google Cloud Platform console, click the horizontal bars and go to Storage, then Browser (Make sure you are still in the same project you used to create the VM)</li>
+  <li>Create bucket and record the name. In this example, I use <b>sample-blog-bucket</b></li>
+  <li>Record Name, and use Regional configuration</li>
+  <li>Add some data and a directory</li>
+    <ol type='a'>
+      <li>Upload files by clicking button or dragging</li>
+      <li>For this example, I’m creating a subfolder called <b>data</b></li>
+      <li>Clicking on data, I’m uploading a sample file called <b>description_wordvec.csv</b></li>
+    </ol>
+</ol>
+
+<h2>Step 3B: Allowing Communication within project VM and Storage by Establishing API Key</h2>
+This is the crucial step!
+<ol>
+  <li>From the main menu, go to IAM & admin -> Service Accounts</li>
+  <li>From actions on the right, select Crete key, and use the default JSON</li>
+  <li>Save this file somewhere secure!</li>
+  <li>You will not need the file in this configuration</li>
+</ol>
+
+<h2>Step 3C: Telling your VM how to find it</h2>
+<ol>
+  <li>Back to Compute Engine VM Instances</li>
+  <li>SSH to your instance</li>
+  <li>Type: gcloud init</li>
+    <ol type='a'>
+      <li>Choice: 1</li>
+      <li>Project ID: use project ID from above (e.g. <b>blogexample)</b></li>
+      <li>Press enter one more time</li>
+    </ol>
+  <li>Secure login to account by typing and entering: gcloud auth login</li>
+  <li>Do you want to continue: y</li>
+  <li>Copy full html string and login with active account, allow</li>
+  <li>Copy generated string back into SSH window (make sure you don’t still have the HTTP copied in the window at this point or the command line app will automatically copy it)</li>
+</ol>
+
+<h2>Step 3D: Moving Data Between Cloud Storage and VM</h2>
+Once logged in with gcloud auth login from above step, type "gsutil cp [filepath from] [filepath to]" in the SSH command line to copy and paste files. Essentially, your bucket it at a location called "gs://".
+<ol>
+  <li>Copy from bucket (to a folder with the VM path ~/projects/):</li>
+  <ul>
+    <li>General string looks like this: gsutil cp gs://[bucket-name][filepath] [VM path to copy to]</li>
+    <li>Single file from bucket to projects folder: gsutil cp gs://sample-blog-bucket/data/description_wordvec.csv ~/projects/</li>
+    <li>Careful with the spaces</li>
+    <li>Whole directory: gsutil cp -r  gs://sample-blog-bucket/data ~/projects/</li>
+  </ul>
+  <li>Copy to bucket</li>
+  <ul>
+    <li>You can create a file as normal from Jupyter, but for this example I’m creating a folder under projects called dl_files, and adding two files (test1.txt and test2.txt) for the example</li>
+    <li>General String looks like this: gsutil cp [file] gs://[bucket-name][filepath]</li>
+    <li>Single file: gsutil cp ~/projects/dl_files/test1.txt gs://sample-blog-bucket/data/</li>
+    <li>Whole directory: gsutil cp -r ~/projects/dl_files/* gs://sample-blog-bucket/data/</li>
+    <li>Contents of directory only: gsutil cp -r ~/projects/dl_files gs://sample-blog-bucket/data/</li>
+  </ul>
+</ol>
+
+<a href="https://cloud.google.com/storage/docs/gsutil/commands/cp">Some more commands are here</a>
+
+
+<h2>Step 3E: Copying Data from bucket</h2>
+Right click on a file name, then save link as to download
+:)
+
+<h1>Summary</h1>
+<h2>Configuring VM code</h2>
+Copy and paste your specifics here to help follow along:
+
+[firewall]
+0.0.0.0/0
+[port number]
+external IP: [IP number]
+
+user_name@instance-1
+
+sudo apt-get update
+sudo apt-get --assume-yes upgrade
+sudo apt-get --assume-yes install software-properties-common
+sudo apt-get install python-setuptools python-dev build-essential
+[y]
+sudo apt install python3-pip
+sudo pip3 install jupyter
+jupyter notebook --generate-config
+
+sudo nano ~/.jupyter/jupyter_notebook_config.py
+
+c = get_config()
+c.NotebookApp.ip= '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 5000
+jupyter notebook password
+ctrl+o [enter]
+ctrl+x
+
+password:
+
+jupyter notebook --ip=0.0.0.0 --port=5000
+
+<h2>Per Session</h2>
+What you actually need to do to run Jupyter once set up:
+<ul>
+  <li>Click ssh, run jupyter notebook --ip=0.0.0.0 --port=[your port number]</li>
+  <li>In a browser window, go to [VM IP Address]:[Port Number], enter your password</li>
+  <li>If desired, copy files to and from the cloud bucket with gsutil</li>
+  <li>If desired, install new Python3 packages using !pip3 install from inside a Jupyter Notebook</li>
+</ul>
+
+What you don't need to do:
+<ul>
+  <li>Run config files</li>
+  <li>Re-authorize your VM using gcloud auth login</li>
+  <li>Re-load files from cloud bucket that have already been stored</li>
+</ul>
+
+Please let me know if you see any issues with this setup.
