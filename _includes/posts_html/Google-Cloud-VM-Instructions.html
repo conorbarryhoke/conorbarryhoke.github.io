@@ -213,20 +213,10 @@ This seems like a good place, so I'll include it here. Often, the biggest memory
 
 Using the above steps, we can also easily store a model trained on a VM back down to our local drive for export to Kaggle kernels and the like.
 
-Assuming you have used sklearn to train a model called "my_model",
-First,
-
-  import pickle
-
-Save the model:
-
-  pickle.dump(model, open('ultimate_model.sav', 'wb'))
-
-Open it back up later:
-
-  my_model = pickle.load(open('ultimate_model.sav', 'rb'))
-
-
+Assuming you have used sklearn to train a model called "my_model", <br>
+First: <b>import pickle</b> <br>
+Save the model: <b>pickle.dump(model, open('ultimate_model.sav', 'wb'))</b> <br>
+Open it back up later: <b>my_model = pickle.load(open('ultimate_model.sav', 'rb'))</b> <br>
 As usual, your filename will include the directory path where you would like it to be located.
 
 
