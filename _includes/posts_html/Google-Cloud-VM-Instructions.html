@@ -1,26 +1,18 @@
-This write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer:
+<h1>So you want to set up Jupyter Notebooks and Run Python in the Cloud, then actually get the Data?</h1>
+This is a comprehensive set of steps. In part 1, we get an account set up and reserve a Virtual Machine using Google's Compute Engine. In Part 2, we install and run a python3 Jupyter Notebook. In Part 3, we set up a Google Cloud Storage bucket to simplify the process of transferring files to and from the VM.
+<br><br>
 
-Move into a subfolder from current path:
-<span style="bakground-color: #FFF00"> cd./[folder name]</span>
-Move up a folder level:
-<span>cd ../</span>
-Home directory:
-  [1] ~
-Create a subfolder in the current working directory:
+First, a quick disclaimer - I'm not an expert on Ubuntu, and can't claim to know how to do this all more securely than not handing out a password. For the time being, its best not to share any of your specifics here with anyone.
+<br>
+Second, this write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer: <br>
 
-  [1] mkdir [folder name]
-
-Create a text file in the current directory:
-
-  [1] touch [filename].txt
-
-List contents of current directory (subfolders and files)
-
-  [1] ls
-
-Display full path of current working directory:
-
-  [1] pwd
+Move into a subfolder from current path: cd./[folder name] <br>
+Move up a folder level: cd ../ <br>
+Home directory: ~ <br>
+Create a subfolder in the current working directory: mkdir [folder name] <br>
+Create a text file in the current directory: touch [filename].txt <br>
+List contents of current directory (subfolders and files): ls <br>
+Display full path of current working directory: pwd <br>
 
 
 <h1>Step 1: The Setup</h1>
@@ -101,10 +93,10 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
         <li>Press down arrow to navigate just under # Configuration file</li>
         <li>Immediately under # Configuratio file for jupyter-notebook, enter the following block (press down arrow to navigate):</li>
 
-          c = get_config()
-          c.NotebookApp.ip= '*'
-          c.NotebookApp.open_browser = False
-          c.NotebookApp.port = 5000
+          <span>c = get_config()</span>
+          <span>c.NotebookApp.ip= '*'</span>
+          <span>c.NotebookApp.open_browser = False</span>
+          <span>c.NotebookApp.port = 5000</span>
 
         <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
       </ol>
