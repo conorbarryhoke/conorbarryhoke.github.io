@@ -1,47 +1,47 @@
 This write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer:
 Move into a subfolder from current path:
 
-  cd ./[folder name]
+  [1] cd ./[folder name]
 
 Move up a folder level:
 
-  cd ../
+  [1] cd ../
 
 Home directory:
 
-  ~
+  [1] ~
 
 Create a subfolder in the current working directory:
 
-  mkdir [folder name]
+  [1] mkdir [folder name]
 
 Create a text file in the current directory:
 
-  touch [filename].txt
+  [1] touch [filename].txt
 
 List contents of current directory (subfolders and files)
 
-  ls
+  [1] ls
 
 Display full path of current working directory:
 
-  pwd
+  [1] pwd
 
 
 <h1>Step 1: The Setup</h1>
 <h2>Step 1a: Create a project</h2>
 
 Search Google Cloud Compute Engine
-<br></br>
+<br>
 Should take you to a page with a console link
-<br></br>
+<br>
 <p>In the upper left, there should be an option to start a new project. If you’ve used anything with an API in the past, you can see it there as well.
 Create a new project and write down the name that google assigns it (You can see it from the projects drop down later if you forget)
 If you haven’t already, you will need to attach a payment account, however Google gives you $300 over 365 days for free.
 Important: Stop your instance when you’re done to save money!</p>
 <h2>Step 1b: Creating a VM</h2>
 <p><a href="https://www.youtube.com/watch?v=zzMCKv1g5z0">View this video if you can</a></p>
-<br></br>
+<br>
 Here is a summary of the salient points:
 <ol>
   <li>Select a region - video used us-west 1, zone 1b, but I used us-east1-b and it was fine</li>
@@ -110,7 +110,7 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
           c.NotebookApp.ip= '*'
           c.NotebookApp.open_browser = False
           c.NotebookApp.port = 5000
-          
+
         <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
       </ol>
     <li>Enter: jupyter notebook password, then type your password. The cursor will not move, however copy+paste works fine</li>
