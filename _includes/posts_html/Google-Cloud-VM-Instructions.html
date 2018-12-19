@@ -206,6 +206,22 @@ Once logged in with gcloud auth login from above step, type "gsutil cp [filepath
 Right click on a file name, then save link as to download
 :)
 
+<h1>On Pickles...</h1>
+This seems like a good place, so I'll include it here. Often, the biggest memory hog for data science is a trained model that we want to store.
+
+Using the above steps, we can also easily store a model trained on a VM back down to our local drive for export to Kaggle kernels and the like.
+
+Assuming you have used sklearn to train a model called "my_model",
+First,
+  import pickle
+Save the model:
+  pickle.dump(model, open('ultimate_model.sav', 'wb'))
+Open it back up later:
+  my_model = pickle.load(open('ultimate_model.sav', 'rb'))
+
+As usual, your filename will include the directory path where you would like it to be located. 
+
+
 <h1>Summary</h1>
 <h2>Configuring VM code</h2>
 Copy and paste your specifics here to help follow along:

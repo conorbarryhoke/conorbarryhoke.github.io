@@ -5,4 +5,4 @@ featured-img: google-cloud-setup
 mathjax: true
 categories: [Tutorial]
 ---
-{% include posts_html/data-science-google-intro.html %}
+{% include posts_html/Google-Cloud-VM-Instructions.html %}
