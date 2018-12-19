@@ -6,13 +6,13 @@ First, a quick disclaimer - I'm not an expert on Ubuntu, and can't claim to know
 <br>
 Second, this write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer: <br>
 
-Move into a subfolder from current path: cd./[folder name] <br>
-Move up a folder level: cd ../ <br>
-Home directory: ~ <br>
-Create a subfolder in the current working directory: mkdir [folder name] <br>
-Create a text file in the current directory: touch [filename].txt <br>
-List contents of current directory (subfolders and files): ls <br>
-Display full path of current working directory: pwd <br>
+Move into a subfolder from current path: <b>cd./[folder name] </b><br>
+Move up a folder level: <b>cd ../</b> <br>
+Home directory: <b>~</b> <br>
+Create a subfolder in the current working directory: <b>mkdir [folder name]</b> <br>
+Create a text file in the current directory: <b>touch [filename].txt </b><br>
+List contents of current directory (subfolders and files): <b>ls</b> <br>
+Display full path of current working directory: <b>pwd </b><br>
 
 
 <h1>Step 1: The Setup</h1>
@@ -93,10 +93,10 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
         <li>Press down arrow to navigate just under # Configuration file</li>
         <li>Immediately under # Configuratio file for jupyter-notebook, enter the following block (press down arrow to navigate):</li>
 
-          <span>c = get_config()</span>
-          <span>c.NotebookApp.ip= '*'</span>
-          <span>c.NotebookApp.open_browser = False</span>
-          <span>c.NotebookApp.port = 5000</span>
+          <p><span>c = get_config()</span></p>
+          <p><span>c.NotebookApp.ip= '*'</span></p>
+          <p><span>c.NotebookApp.open_browser = False</span></p>
+          <p><span>c.NotebookApp.port = 5000</span></p>
 
         <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
       </ol>
