@@ -14,6 +14,8 @@ Create a text file in the current directory: <b>touch [filename].txt </b><br>
 List contents of current directory (subfolders and files): <b>ls</b> <br>
 Display full path of current working directory: <b>pwd </b><br>
 
+Finally, note that with this SSH instance, any time you highlight anything it will be automatically copied. Be careful about pasting stuff in without first de-selecting what's in the window.
+
 
 <h1>Step 1: The Setup</h1>
 <h2>Step 1a: Create a project</h2>
@@ -91,7 +93,7 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
     <li>sudo nano ~/.jupyter/jupyter_notebook_config.py</li>
       <ol type ='i'>
         <li>Press down arrow to navigate just under # Configuration file</li>
-        <li>Immediately under <b># Configuration file for jupyter-notebook</b>, enter the following block (press down arrow to navigate): <br></li>
+        <li>Immediately under <b># Configuration file for jupyter-notebook</b>, paste in the following block (press down arrow to navigate): <br></li>
 
           <p><span>c = get_config()</span></p>
           <p><span>c.NotebookApp.ip= '*'</span></p>
