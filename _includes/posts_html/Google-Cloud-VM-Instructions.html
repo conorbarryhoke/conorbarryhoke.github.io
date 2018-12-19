@@ -1,17 +1,30 @@
 This write-up assumes you have basic familiarity with command line navigation. If not, here is a quick primer:
 Move into a subfolder from current path:
+
   cd ./[folder name]
+
 Move up a folder level:
+
   cd ../
+
 Home directory:
+
   ~
+
 Create a subfolder in the current working directory:
+
   mkdir [folder name]
+
 Create a text file in the current directory:
+
   touch [filename].txt
+
 List contents of current directory (subfolders and files)
+
   ls
+
 Display full path of current working directory:
+
   pwd
 
 
@@ -92,10 +105,12 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
       <ol type ='i'>
         <li>Press down arrow to navigate just under # Configuration file</li>
         <li>Immediately under # Configuratio file for jupyter-notebook, enter the following block (press down arrow to navigate):</li>
+
           c = get_config()
           c.NotebookApp.ip= '*'
           c.NotebookApp.open_browser = False
           c.NotebookApp.port = 5000
+          
         <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
       </ol>
     <li>Enter: jupyter notebook password, then type your password. The cursor will not move, however copy+paste works fine</li>
@@ -213,13 +228,19 @@ Using the above steps, we can also easily store a model trained on a VM back dow
 
 Assuming you have used sklearn to train a model called "my_model",
 First,
+
   import pickle
+
 Save the model:
+
   pickle.dump(model, open('ultimate_model.sav', 'wb'))
+
 Open it back up later:
+
   my_model = pickle.load(open('ultimate_model.sav', 'rb'))
 
-As usual, your filename will include the directory path where you would like it to be located. 
+
+As usual, your filename will include the directory path where you would like it to be located.
 
 
 <h1>Summary</h1>
