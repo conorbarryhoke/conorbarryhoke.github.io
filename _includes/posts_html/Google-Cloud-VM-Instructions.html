@@ -93,16 +93,17 @@ To save some space, anywhere if it asks you to continue, enter 'y'. Anytime you 
     <li>sudo nano ~/.jupyter/jupyter_notebook_config.py</li>
       <ol type ='i'>
         <li>Press down arrow to navigate just under # Configuration file</li>
-        <li>Immediately under <b># Configuration file for jupyter-notebook</b>, paste in the following block (press down arrow to navigate): <br></li>
+        <li>Immediately under <b># Configuration file for jupyter-notebook</b>, paste in the following block (press down arrow to navigate): <br><br></li>
 
-          <p><span stle="background-color:#FFF00">c = get_config() <br>
+          <p><span stle="background-color:grey">
+          c = get_config() <br>
           c.NotebookApp.ip= '*' <br>
           c.NotebookApp.open_browser = False <br>
           c.NotebookApp.port = 5000</span></p>
 
         <li>Exit back: Press Ctrl + o (letter o), then Enter. Then, Press Ctrl + x</li>
       </ol>
-    <li>Enter: jupyter notebook password, then type your password. The cursor will not move, however copy+paste works fine</li>
+    <li>Enter: <b>jupyter notebook password</b>, then type your password. The cursor will not move, however copy+paste works fine</li>
   </ol>
 </ol>
 
@@ -121,8 +122,8 @@ From the SSH connection, do the following
     </ol>
   <li>Launch Jupyter notebook:</li>
     <ol type='a'>
-      <li>jupyter notebook --ip=0.0.0.0 --port=5000 (whatever you put)</li>
-      <li>Go to IP:port ([your IP goes here]:5000) in a new browser tab</li>
+      <li>jupyter notebook --ip=0.0.0.0 --port=5000 (whatever port you put)</li>
+      <li>Go to IP:port (e.g. 123.456.789:5000) in a new browser tab</li>
       <li>Enter password and run Jupyter</li>
     </ol>
   <li>Intalling packages</li>
