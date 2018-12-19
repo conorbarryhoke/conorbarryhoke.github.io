@@ -20,16 +20,15 @@ Finally, note that with this SSH instance, any time you highlight anything it wi
 <h1>Step 1: The Setup</h1>
 <h2>Step 1a: Create a project</h2>
 
-Search Google Cloud Compute Engine
-<br>
-Should take you to a page with a console link
+Search Google Cloud Compute Engine, which should take you to a page with a console link
 <br>
 <p>In the upper left, there should be an option to start a new project. If you’ve used anything with an API in the past, you can see it there as well.
 Create a new project and write down the name that google assigns it (You can see it from the projects drop down later if you forget)
 If you haven’t already, you will need to attach a payment account, however Google gives you $300 over 365 days for free.
-Important: Stop your instance when you’re done to save money!</p>
+<br>
+<b>Important: Stop your instance when you’re done to save money!</b> If you select static instead of Ephermeral storage (below), it will charge you a little more but all your data will stay saved when you close the VM down. CPUs are more expensive by orders of magnitude (while they're actually running), so this is more effective in the long run.</p>
 <h2>Step 1b: Creating a VM</h2>
-<p><a href="https://www.youtube.com/watch?v=zzMCKv1g5z0">View this video if you can</a></p>
+<p><a href="https://www.youtube.com/watch?v=zzMCKv1g5z0">View this video if you can. The setup is only for python2.7 on an older Ubuntu build, but I've noted the differences below to get python3 up instead. It is otherwise a fantastic walkthrough.</a></p>
 <br>
 Here is a summary of the salient points:
 <ol>
@@ -54,7 +53,7 @@ Here is a summary of the salient points:
 
 </ol>
 
-<br></br>
+<br>
 At this point the VM is established, but we need some additional configuration
 <ol>
   <li>Click on the horizontal bars in the upper left</li>
@@ -255,7 +254,7 @@ ctrl+x
 
 password:
 
-jupyter notebook --ip=0.0.0.0 --port=5000
+jupyter notebook --ip=0.0.0.0 --port=5000  
 
 <h2>Per Session</h2>
 What you actually need to do to run Jupyter once set up:
