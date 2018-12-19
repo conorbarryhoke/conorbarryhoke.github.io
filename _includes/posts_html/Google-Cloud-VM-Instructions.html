@@ -225,36 +225,36 @@ As usual, your filename will include the directory path where you would like it 
 <h1>Summary</h1>
 <h2>Configuring VM code</h2>
 Copy and paste your specifics here to help follow along:
+<br>
+[firewall]<br>
+0.0.0.0/0<br>
+[port number]<br>
+external IP: [IP number]<br>
 
-[firewall]
-0.0.0.0/0
-[port number]
-external IP: [IP number]
+user_name@instance-1 <br>
 
-user_name@instance-1
+sudo apt-get update <br>
+sudo apt-get --assume-yes upgrade<br>
+sudo apt-get --assume-yes install software-properties-common<br>
+sudo apt-get install python-setuptools python-dev build-essential<br>
+[y]<br>
+sudo apt install python3-pip<br>
+sudo pip3 install jupyter<br>
+jupyter notebook --generate-config<br>
 
-sudo apt-get update
-sudo apt-get --assume-yes upgrade
-sudo apt-get --assume-yes install software-properties-common
-sudo apt-get install python-setuptools python-dev build-essential
-[y]
-sudo apt install python3-pip
-sudo pip3 install jupyter
-jupyter notebook --generate-config
-
-sudo nano ~/.jupyter/jupyter_notebook_config.py
-
-c = get_config()
-c.NotebookApp.ip= '*'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 5000
-jupyter notebook password
-ctrl+o [enter]
-ctrl+x
-
-password:
-
-jupyter notebook --ip=0.0.0.0 --port=5000  
+sudo nano ~/.jupyter/jupyter_notebook_config.py<br>
+<br>
+c = get_config()<br>
+c.NotebookApp.ip= '*'<br>
+c.NotebookApp.open_browser = False<br>
+c.NotebookApp.port = 5000<br>
+jupyter notebook password<br>
+ctrl+o [enter]<br>
+ctrl+x<br>
+<br>
+password:<br>
+<br>
+jupyter notebook --ip=0.0.0.0 --port=5000  <br>
 
 <h2>Per Session</h2>
 What you actually need to do to run Jupyter once set up:
