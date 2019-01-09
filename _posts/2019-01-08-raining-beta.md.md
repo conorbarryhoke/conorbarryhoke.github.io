@@ -5,7 +5,7 @@ featured-img: google-cloud-setup
 mathjax: true
 categories: [Tutorial]
 ---
-
+<!DOCTYPE html>
 <html>
 <head>
 
