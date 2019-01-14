@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Augmenting Your Job Search with Python
-featured-img: google-cloud-setup
+featured-img: jobsearch-analyzer
 mathjax: true
 categories: [Analysis]
 ---
