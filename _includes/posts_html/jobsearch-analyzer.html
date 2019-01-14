@@ -18,13 +18,14 @@ So this is fairly helpful. I have some good jargon to work with, but a lot of th
 
 <h3>Word Significance</h3>
 A refinement of the above, the model then looks in a corpus of basic conversational text to create a custom of TF-IDF vector. The current text base is from some random Reddit pages collected in September 2018 for a different project (The source subreddits for each post are in the file). This corpus is then used to develop a word frequency baseline.
+
 The counts for each word from the first part are then divided by relative frequency from the Reddit corpus to get a 'Significance'. The idea is that we don't just want the overall count of a word - just about every post out there is looking for 'teamwork'. By identifying rare words that occur frequently in the job posts you're looking at, you can get a sense of what defines each post, and what makes it unique.
 Here's what that looks like:
 
 
 ![My Weights](https://raw.githubusercontent.com/conorbarryhoke/Blog_Posts/master/Job%20Descriptions/my_frequent_words_cloud.jpeg)
 
-From this we can start to see some more interesting patterns emerging.
+From this we can start to see some more interesting patterns emerging. There are skills (SQL, Python) and expertise areas (refine, Tableau) that begin to emerge as important. 
 
 <h2>Comparison and Conclusion</h2>
 
@@ -38,7 +39,8 @@ The basic count is a quick checklist of must haves in a cover letter or resume. 
 What the Word Signficance results start to do is suggest a more natural sentence with real meaning. For example, I can look down the column and see the sentence "Develop data-driven models to improve customer experience and improve product" or "Experience leveraging data science tools to craft financial/marketing analysis". More abstractly, I can see that the job postings in my set are formatted to look for the application of general skills to achieve a result in a specific business area.
 
 
-When I go to craft line items for my resume, each bullet can probably safely condensed to read like "Applied <i>skill</i> and knowledge of <i>tool</i> to achieve <i>result</i> in <i>area</i>."
+When I go to craft line items for my resume, each bullet can probably safely condensed to read like
+  "Applied <i>skill</i> and knowledge of <i>tool</i> to achieve <i>result</i> in <i>area</i>."
 Each of these generic items can be filled in from a bag of skills I would like to present.
 
 This also gives a framework to condense down vague job postings to identify what the actual ask is.
