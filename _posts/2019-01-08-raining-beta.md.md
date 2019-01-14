@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (this post is in beta)
-featured-img: google-cloud-setup
+featured-img: 
 mathjax: true
 categories: [Tutorial]
 ---
