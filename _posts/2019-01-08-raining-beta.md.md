@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Doing Data Science on Google Cloud
+title: (this post is in beta)
 featured-img: google-cloud-setup
 mathjax: true
 categories: [Tutorial]
