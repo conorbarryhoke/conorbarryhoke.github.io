@@ -10,7 +10,7 @@ categories: [Tutorial]
 <head>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type=text/javascript>
+  <script type="text/javascript">
       $(document).ready(function(){
           $.getJSON(
               "http://35.226.182.38/",
@@ -32,8 +32,8 @@ categories: [Tutorial]
 
 <button>Get JSON data</button>
 
-Before Retval
+Before Retval 1
 <div id="retval"></div>
-After retval
+After retval 1
 </body>
 </html>
