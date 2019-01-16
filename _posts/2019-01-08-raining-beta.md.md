@@ -5,17 +5,16 @@ featured-img:
 mathjax: true
 categories: [Tutorial]
 ---
-<!DOCTYPE html>
+
 <html>
-<head>
-
-</head>
-
-<body>
-<div>
-    <object type="text/html" data="http://35.226.182.38/">
+  <head>
+    <meta charset="utf-8">
+    <title>Load remote content into object element</title>
+  </head>
+  <body>
+     <div>
+    <object type="text/html" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" width="800px" height="600px" style="overflow:auto;border:5px ridge blue">
     </object>
  </div>
-after the div
-</body>
+  </body>
 </html>
