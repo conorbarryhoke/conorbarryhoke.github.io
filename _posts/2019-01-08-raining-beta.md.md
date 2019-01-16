@@ -11,11 +11,11 @@ categories: [Tutorial]
 
 </head>
 
-
+<body>
 <div>
     <object type="text/html" data="http://35.226.182.38/">
     </object>
  </div>
-
+after the div
 </body>
 </html>
