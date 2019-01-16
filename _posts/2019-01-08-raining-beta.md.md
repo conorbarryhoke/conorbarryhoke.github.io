@@ -9,7 +9,7 @@ categories: [Tutorial]
 <head>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type=text/javascript>
+  <script type="text/javascript">
       $(document).ready(function(){
           $.getJSON(
               "http://35.226.182.38/",
@@ -28,8 +28,8 @@ categories: [Tutorial]
 
 
 <body>
-
+This comes before retval
 <div id="retval"></div>
-
+This comes after retval
 </body>
 </html>
