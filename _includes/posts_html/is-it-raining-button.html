@@ -2,31 +2,16 @@
 <html>
 <head>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type=text/javascript>
-      $(document).ready(function(){
-          $.getJSON(
-              'http://35.226.182.38/',
-              {format: "jsonp"})
-              .done(
-                  function(data) {
-                      var plot_id = data.stuff;
-                      $("#retval").html( "<strong>" + plot_id + "</strong>" + " eh?" );
-                  }
-              ).error(function() {alert("error"); });
-      });
-  </script>
+
+
 
 
 </head>
 
 
-<body>
-
-<button>Get JSON data</button>
-
-<div id="where">teste</div>
-<div id="retval"></div>
-<span id="error"></span>
+<div>
+    <object type="text/html" data="http://35.226.182.38/" width="800px" height="600px" style="overflow:auto;border:5px ridge blue">
+    </object>
+ </div>
 
 </body>
