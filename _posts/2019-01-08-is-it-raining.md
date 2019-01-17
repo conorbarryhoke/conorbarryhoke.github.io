@@ -15,13 +15,13 @@ categories: [Tutorial]
           $("#responding_text").html("<i>" + " (It's totally raining!)" + "</i>");
           }
         else if (+$("#var_text").text()>40) {
-          $("#responding_text").html("<i>" + " (So Probably?)" + "</i>" );
+          $("#responding_text").html("<i>" + " (So definitely probably.)" + "</i>" );
           }
         else if (+$("#var_text").text()>20) {
           $("#responding_text").html( "<i>" + " (So maybe?)" + "</i>");
           }
         else {
-          $("#responding_text").html( "<i>" + " (So Probably not)" + "</i>" );
+          $("#responding_text").html( "<i>" + " (So Probably not :-( ))" + "</i>" );
           }
         });
   </script>
@@ -34,7 +34,7 @@ categories: [Tutorial]
   <p id="responding_text"></p>
   <br>
   <p>Last Update: </p>
-  <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt"></object>
+  <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt" height="50" width="225"></object>
 
   <br>
   <a href="https://github.com/conorbarryhoke/is_it_raining">Click here for GitHub Repo</a>
