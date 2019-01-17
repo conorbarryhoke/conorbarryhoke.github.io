@@ -8,7 +8,7 @@ categories: [Tutorial]
 
 <html>
 <head>
-  <script type=text/javascript>
+  <script type="text/javascript">
       $(document).ready(function(){
         if( +$("#var_text").text()>80){
           $("#responding_text").html("<i>" + " (It's totally raining!)" + "</i>");
