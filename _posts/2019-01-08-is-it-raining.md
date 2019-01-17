@@ -16,7 +16,7 @@ categories: [Tutorial]
         else if (+$("#var_text").text()>40) {
           $("#responding_text").html("<i>" + " (So Probably?)" + "</i>" );
           }
-        else if (+$("#var_text").text()>10) {
+        else if (+$("#var_text").text()>20) {
           $("#responding_text").html( "<i>" + " (So maybe?)" + "</i>");
           }
         else {
@@ -32,10 +32,11 @@ categories: [Tutorial]
   <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" height="60" width="60" style="overflow:auto;border:5px ridge blue"></object><p>percent chance that it's already raining!</p>
   <p id="responding_text"></p>
   <br>
-  <span>Last Update: </span><object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt"></object>
+  <p>Last Update: </p>
+  <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt"></object>
 
-  <br><br><br>
-  <a href="">Click here for GitHub Repo</a>
+  <br>
+  <a href="https://github.com/conorbarryhoke/is_it_raining">Click here for GitHub Repo</a>
 
 
 
