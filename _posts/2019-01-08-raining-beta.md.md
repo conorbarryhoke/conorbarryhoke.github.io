@@ -8,8 +8,6 @@ categories: [Tutorial]
 
 <html>
 <head>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type=text/javascript>
       $(document).ready(function(){
         if( +$("#var_text").text()>80){
@@ -31,7 +29,7 @@ categories: [Tutorial]
 <body>
 
   <p>This is Karen_Bot with the weather! I'm here in Austin and there is a </p>
-  <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" height="40" width="60" style="overflow:auto;border:5px ridge blue"></object><p>percent chance that it's already raining!</p>
+  <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" height="60" width="60" style="overflow:auto;border:5px ridge blue"></object><p>percent chance that it's already raining!</p>
   <p id="responding_text"></p>
   <br><br><br>
   <span>Last Update: </span><object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt"></object>
