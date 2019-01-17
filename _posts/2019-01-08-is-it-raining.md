@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (this post is in beta)
+title: Is it raining in Austin right now?
 featured-img:
 mathjax: true
 categories: [Tutorial]
@@ -31,7 +31,7 @@ categories: [Tutorial]
   <p>This is Karen_Bot with the weather! I'm here in Austin and there is a </p>
   <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" height="60" width="60" style="overflow:auto;border:5px ridge blue"></object><p>percent chance that it's already raining!</p>
   <p id="responding_text"></p>
-  <br><br><br>
+  <br>
   <span>Last Update: </span><object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt"></object>
 
   <br><br><br>
