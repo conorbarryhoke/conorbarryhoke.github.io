@@ -29,9 +29,9 @@ categories: [Tutorial]
 
 <body>
 
-  <p>This is Karen_Bot with the weather! I'm here in Austin and there is a </p>
+  <center><p>This is Karen_Bot with the weather! I'm here in Austin and there is a </p>
   <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/isitraining.txt" height="50" width="55" style="overflow:auto;border:5px ridge blue"></object><p>percent chance that it's already raining!</p>
-  <p id="responding_text"></p>
+  <p id="responding_text"></p></center>
   <br>
   <p>Last Update: </p>
   <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt" height="50" width="225"></object>
