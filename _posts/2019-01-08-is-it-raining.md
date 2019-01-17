@@ -15,13 +15,13 @@ categories: [Tutorial]
           $("#responding_text").html("<i>" + " (It's totally raining!)" + "</i>");
           }
         else if (+$("#var_text").text()>40) {
-          $("#responding_text").html("<i>" + " (So definitely probably.)" + "</i>" );
+          $("#responding_text").html("<i>" + " So definitely probably" + "</i>" );
           }
         else if (+$("#var_text").text()>20) {
-          $("#responding_text").html( "<i>" + " (So maybe?)" + "</i>");
+          $("#responding_text").html( "<i>" + " So maybe?" + "</i>");
           }
         else {
-          $("#responding_text").html( "<i>" + " (So Probably not :-/ " + "</i>" );
+          $("#responding_text").html( "<i>" + " So Probably not :-/ " + "</i>" );
           }
         });
   </script>
