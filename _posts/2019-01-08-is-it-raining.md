@@ -36,8 +36,7 @@ categories: [Tutorial]
   <p>Last Update: </p>
   <object type="text/html" id="var_text" data="https://storage.googleapis.com/is-it-raining/update_date.txt" height="50" width="225"></object>
 
-  <br>
-  <a href="https://github.com/conorbarryhoke/is_it_raining">Click here for GitHub Repo</a>
+  <a href="https://github.com/conorbarryhoke/is_it_raining">About this Project</a> (Code and Explanation)
 
 
 
