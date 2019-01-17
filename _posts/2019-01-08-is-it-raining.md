@@ -21,7 +21,7 @@ categories: [Tutorial]
           $("#responding_text").html( "<i>" + " (So maybe?)" + "</i>");
           }
         else {
-          $("#responding_text").html( "<i>" + " (So Probably not :-( ))" + "</i>" );
+          $("#responding_text").html( "<i>" + " (So Probably not :-/ " + "</i>" );
           }
         });
   </script>
