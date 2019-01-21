@@ -11,13 +11,13 @@ categories: [Twitter]
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
       $(document).ready(function(){
-        if( +$("#var_text").text()>80){
+        if( +$("#var_text").text()>80.){
           $("#responding_text").html("<i>" + " (It's totally raining!)" + "</i>");
           }
-        else if (+$("#var_text").text()>40) {
+        else if (+$("#var_text").text()>40.) {
           $("#responding_text").html("<i>" + " So definitely probably" + "</i>" );
           }
-        else if (+$("#var_text").text()>20) {
+        else if (+$("#var_text").text()>20.) {
           $("#responding_text").html( "<i>" + " So maybe?" + "</i>");
           }
         else {
